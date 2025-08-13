@@ -1,0 +1,70 @@
+{
+    "apply_order": 110,
+    "depends": ["makeup_base"],
+    "assets": {
+        "materials": {
+            "shaders/contour/blur_hsv": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/blur_hsv",
+                "samplers": 
+                [
+                    { "name": "tex_input", "image": "base_main_color" },
+                    { "name": "tex_mask",  "image": "consiler_contour_highlighter_blush_tex_c" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "defines": ["BNB_MAKEUP_CONTOUR"]
+            },
+            "shaders/contour/tone": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/tone",
+                "samplers": 
+                [
+                    { "name": "tex_blur_hsv", "image": "blur_hsv" },
+                    { "name": "tex_mean",     "image": "mean0" },
+                    { "name": "tex_stddev",   "image": "stddev0" },
+                    { "name": "tex_mask",     "image": "consiler_contour_highlighter_blush_tex_c" }
+                ],
+                "state": { "blend": "alpha", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "parameters": 
+                {
+                    "contour_abcd":     { "type": "vec4", "value": [1, 0, 1, 0] },
+                    "contour_krp":      { "type": "vec4", "value": [0.5, 0, 0, 0] },
+                    "contour_rgb_maxa": { "type": "vec4", "value": [0.86, 0.70, 0.64, 1] }
+                },
+                "defines": ["BNB_MAKEUP_CONTOUR"]
+            }
+        }
+    },
+    "entities": {
+        "contour_ent": { 
+            "components": { "mesh_instance" : {
+                "materials":[
+                    "shaders/contour/blur_hsv",
+                    "shaders/mean",
+                    "shaders/stddev",
+                    "shaders/contour/tone"
+                ],
+                "mesh": "/bnb_prefabs/makeup_contour/meshes/contour.bsm2"} }, 
+            "layers": [
+                "contour_blur_hsv_layer",
+                "contour_mean_layer",
+                "contour_stddev_layer",
+                "contour_tone_layer"
+            ]
+        }
+    },
+    "hierarchy": {
+        "root": [
+            "contour_ent"
+        ]
+    },
+    "render_list": {
+        "default": [
+            { "layer": "contour_blur_hsv_layer", "sub_geometries":["contour/blur_hsv"], "render_target": "blur_hsv_rt" },
+            { "layer": "contour_mean_layer",     "sub_geometries":["mean"], "render_target": "mean_rt" },
+            { "layer": "contour_stddev_layer",   "sub_geometries":["stddev"], "render_target": "stddev_rt" },
+            { "layer": "contour_tone_layer",     "sub_geometries":["contour/tone"], "render_target": "base_rt" }
+        ]
+    },
+    "script": "/bnb_prefabs/makeup_contour/scripts/index.js"
+}

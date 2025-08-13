@@ -1,0 +1,37 @@
+{
+    "type": "object",
+    "description": "Apply lipsliner.",
+    "required": [
+        "color",
+        "finish",
+        "coverage"
+    ],
+    "properties": {
+        "color": {
+            "type": "string",
+            "default": "0 0 0",
+            "description": "Solid color of the region in RGB string format."
+        },
+        "finish": {
+            "type": "string",
+            "enum": [
+                "shimmer"
+            ],
+            "description": "Type of the finish surface."
+        },
+        "coverage": {
+            "type": ["string", "number"],
+            "enum": [
+                "low",
+                "mid",
+                "high"
+            ],
+            "description": "Coverage intensity."
+        },
+        "liner": {
+            "type": "string",
+            "default": "3 5",
+            "description": "Liner options contain 2 values: 'liner width' and 'softness'."
+        }
+    }
+}

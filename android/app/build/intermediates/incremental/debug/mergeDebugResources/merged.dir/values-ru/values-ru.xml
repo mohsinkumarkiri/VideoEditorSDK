@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2" xmlns:ns2="http://schemas.android.com/tools">
+    <string-array name="interaction_quiz_default_answers">
+        <item>Ответ 1</item>
+        <item>Ответ 2</item>
+    </string-array>
+    <plurals name="err_gallery_limit_selected">
+        <item quantity="one">Вы можете выбрать только %1$d файл</item>
+        <item quantity="few">Вы можете выбрать только %1$d файла</item>
+        <item quantity="many">Вы можете выбрать только %1$d файлов</item>
+        <item quantity="other">Вы можете выбрать только %1$d файлов</item>
+    </plurals>
+    <plurals name="gallery_choose_at_least">
+        <item quantity="one">Выберите хотя бы %1$d файл</item>
+        <item quantity="few">Выберите не менее %1$d файлов</item>
+        <item quantity="many">Выберите не менее %1$d файлов</item>
+        <item quantity="other">Выберите не менее %1$d файлов</item>
+    </plurals>
+    <plurals name="gallery_selection_count_description_image">
+        <item quantity="one">Импортировать %1$d Фото</item>
+        <item quantity="few">Импортировать %1$d Фото</item>
+        <item quantity="many">Импортировать %1$d Фото</item>
+        <item quantity="other">Импортировать %1$d Фото</item>
+    </plurals>
+    <plurals name="gallery_selection_count_description_mix">
+        <item quantity="one">Импортировать %1$d Файл</item>
+        <item quantity="few">Импортировать %1$d Файла</item>
+        <item quantity="many">Импортировать %1$d Файла</item>
+        <item quantity="other">Импортировать %1$d Файлов</item>
+    </plurals>
+    <plurals name="gallery_selection_count_description_video">
+        <item quantity="one">Импортировать %1$d Видео</item>
+        <item quantity="few">Импортировать %1$d Видео</item>
+        <item quantity="many">Импортировать %1$d Видео</item>
+        <item quantity="other">Импортировать %1$d Видео</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+    <item quantity="one">%d новое уведомление</item>
+    <item quantity="few">%d новых уведомления</item>
+    <item quantity="many">%d новых уведомлений</item>
+    <item quantity="other">%d нового уведомления</item>
+  </plurals>
+    <string msgid="5976598919945601918" name="abc_action_bar_home_description">"Перейти на главный экран"</string>
+    <string msgid="8388173803310557296" name="abc_action_bar_up_description">"Перейти вверх"</string>
+    <string msgid="3937310113216875497" name="abc_action_menu_overflow_description">"Ещё"</string>
+    <string msgid="4692188335987374352" name="abc_action_mode_done">"Готово"</string>
+    <string msgid="1189761859438369441" name="abc_activity_chooser_view_see_all">"Показать все"</string>
+    <string msgid="2165779757652331008" name="abc_activitychooserview_choose_application">"Выберите приложение"</string>
+    <string msgid="4215997306490295099" name="abc_capital_off">"ВЫКЛ"</string>
+    <string msgid="884982626291842264" name="abc_capital_on">"ВКЛ"</string>
+    <string msgid="8833365367933412986" name="abc_menu_alt_shortcut_label">"Alt +"</string>
+    <string msgid="2223301931652355242" name="abc_menu_ctrl_shortcut_label">"Ctrl +"</string>
+    <string msgid="838001238306846836" name="abc_menu_delete_shortcut_label">"Delete"</string>
+    <string msgid="7986526966204849475" name="abc_menu_enter_shortcut_label">"Ввод"</string>
+    <string msgid="375214403600139847" name="abc_menu_function_shortcut_label">"Fn +"</string>
+    <string msgid="4192209724446364286" name="abc_menu_meta_shortcut_label">"Meta +"</string>
+    <string msgid="4741552369836443843" name="abc_menu_shift_shortcut_label">"Shift +"</string>
+    <string msgid="5473865519181928982" name="abc_menu_space_shortcut_label">"Пробел"</string>
+    <string msgid="6180552449598693998" name="abc_menu_sym_shortcut_label">"Sym +"</string>
+    <string msgid="5520303668377388990" name="abc_prepend_shortcut_label">"Меню +"</string>
+    <string msgid="7208076849092622260" name="abc_search_hint">"Введите запрос"</string>
+    <string msgid="3741173234950517107" name="abc_searchview_description_clear">"Удалить запрос"</string>
+    <string msgid="693312494995508443" name="abc_searchview_description_query">"Поисковый запрос"</string>
+    <string msgid="3417662926640357176" name="abc_searchview_description_search">"Поиск"</string>
+    <string msgid="1486535517437947103" name="abc_searchview_description_submit">"Отправить запрос"</string>
+    <string msgid="2293578557972875415" name="abc_searchview_description_voice">"Голосовой поиск"</string>
+    <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Поделиться с помощью"</string>
+    <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"Поделиться с помощью <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
+    <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Свернуть"</string>
+    <string name="action_add_blur_effect_circle">Круг</string>
+    <string name="action_add_blur_effect_square">Квадрат</string>
+    <string name="action_add_music_effect">Эффекты</string>
+    <string name="action_add_music_track">Треки</string>
+    <string name="action_add_sticker_effect">Стикер</string>
+    <string name="action_add_text_effect">Текст</string>
+    <string name="action_add_voice_recording">Голос</string>
+    <string name="action_blur_effect_title">Маска %1$d</string>
+    <string name="action_captions">Субтитры</string>
+    <string name="action_delete">Удалить</string>
+    <string name="action_edit">Изменить</string>
+    <string name="action_effects">Эффекты</string>
+    <string name="action_style">Стиль</string>
+    <string name="action_volume">Громкость</string>
+    <string name="alert_delete_video_desc"/>
+    <string name="alert_delete_video_message">Удалить последнее видео?</string>
+    <string name="alert_delete_video_negative">Отмена</string>
+    <string name="alert_delete_video_positive">Удалить</string>
+    <string gender="unknown" name="alert_description">Оповещение</string>
+    <string name="alert_loading">Загрузка</string>
+    <string name="alert_negative">Нет</string>
+    <string name="alert_pip_headphones_desc">Качество звука будет лучше при записи реакции в наушниках</string>
+    <string name="alert_pip_headphones_message">Используйте наушники</string>
+    <string name="alert_pip_headphones_positive">Закрыть</string>
+    <string name="alert_positive">Да</string>
+    <string name="alert_reset_all_message">Удалить видео?</string>
+    <string name="alert_reset_all_message_desc">Видео клип будет удален</string>
+    <string name="alert_reset_all_negative">Закрыть</string>
+    <string name="alert_reset_all_positive">Сбросить</string>
+    <string name="alert_reset_all_start_over">Переснять</string>
+    <string name="alert_save_video_chunk_desc"/>
+    <string name="alert_save_video_chunk_message">Сохранить?</string>
+    <string name="alert_save_video_negative">Отмена</string>
+    <string name="alert_save_video_positive">Сохранить</string>
+    <string name="alert_saving">Сохранение</string>
+    <string name="apply_track">Применить</string>
+    <string name="audio_browser_connection_error_btn">Повторить</string>
+    <string name="audio_browser_connection_error_message">Пожалуйста, проверьте интернет соединение и попробуйте еще раз.</string>
+    <string name="audio_browser_connection_error_title">Нет соединения</string>
+    <string name="audio_browser_connection_error_toast">Нет интернет соединения</string>
+    <string name="audio_browser_error_categories_not_found">Категории не найдены</string>
+    <string name="audio_browser_error_dialog_close">Закрыть</string>
+    <string name="audio_browser_error_dialog_description">Пожалуйста, повторите попытку позже.</string>
+    <string name="audio_browser_error_dialog_retry">Повторить</string>
+    <string name="audio_browser_error_dialog_title">Упс! Что-то пошло не так…</string>
+    <string name="audio_browser_error_empty_library">Треки отсутствуют</string>
+    <string name="audio_browser_error_license_access">В доступе отказано, проверьте тип доступа лицензии</string>
+    <string name="audio_browser_error_license_api_version">В доступе отказано, проверьте версию лицензионного API</string>
+    <string name="audio_browser_error_license_expired">Срок действия лицензии истек</string>
+    <string name="audio_browser_error_license_not_active">Лицензия не активна</string>
+    <string name="audio_browser_error_license_wrong_key">Пожалуйста свяжитесь с Mubert: лицензия недоступна</string>
+    <string name="audio_browser_error_tracks_not_found">Треки не найдены</string>
+    <string name="audio_browser_error_unknown_client">Ошибка клиента</string>
+    <string name="audio_browser_error_unknown_server">Ошибка сервера</string>
+    <string name="audio_browser_hint_search_categories">Поиск по категориям</string>
+    <string name="audio_browser_hint_search_sub_categories">Поиск по группам</string>
+    <string name="audio_browser_hint_search_tracks">Поиск по трекам</string>
+    <string name="audio_browser_load_more">Показать больше</string>
+    <string name="audio_browser_title_category">Музыка</string>
+    <string name="audio_browser_title_empty_category">Музыка</string>
+    <string name="audio_browser_title_library">Моя библиотека</string>
+    <string name="auto_cut_cancel">Закрыть</string>
+    <string name="auto_cut_drag_to_adjust_sound">Потяните для настройки звука</string>
+    <string name="auto_cut_something_went_wrong_try_again">Что-то пошло не так.\nПопробовать снова?</string>
+    <string name="auto_cut_try_again">Попробовать снова</string>
+    <string name="autocut_error_button">Повторить</string>
+    <string name="autocut_error_description">Что-то пошло не так. Пожалуйста, повторите попытку позже.</string>
+    <string name="autocut_error_title">Не возможно обработать видео</string>
+    <string name="autocut_processing_progress">Обработка медиа %1$d%%</string>
+    <string name="autocut_themes_title">Выберите тему</string>
+    <string name="autocut_volume_added_sound">Добавленный звук</string>
+    <string name="autocut_volume_original_sound">Оригинальный звук</string>
+    <string name="background_effect_empty_view">Ничего не найдено</string>
+    <string name="background_effect_invalid_file">Поврежденный файл</string>
+    <string name="background_effect_list_hint">Выберите медиафайл, чтобы изменить фон:</string>
+    <string name="background_effect_list_permission">Разрешить доступ к галерее для изменения фона</string>
+    <string name="background_effect_permission_btn">Разрешить доступ</string>
+    <string name="background_effect_unsupported_video">Видео не может быть использовано для фона</string>
+    <string name="beauty_intensity">Интенсивность</string>
+    <string name="bottomsheet_action_expand_halfway">Развернуть наполовину</string>
+    <string name="camera_alert_negative">Нет</string>
+    <string name="camera_alert_positive">Да</string>
+    <string name="camera_next">Далее</string>
+    <string name="camera_overlay_gallery">Галерея</string>
+    <string name="camera_record_mode_photo">Фото</string>
+    <string name="camera_record_mode_video">Видео</string>
+    <string gender="unknown" name="catalyst_dev_menu_header">Меню разработчика React Native (%1$s)</string>
+    <string gender="unknown" name="catalyst_dev_menu_sub_header">Текущий показ %1$s</string>
+    <string name="character_counter_content_description">Введено символов: %1$d из %2$d</string>
+    <string name="character_counter_overflowed_content_description">Превышено ограничение на количество символов (%1$d из %2$d)</string>
+    <string name="clear_text_end_icon_content_description">Очистить текстовое поле</string>
+    <string gender="unknown" name="combobox_description">Комбинированный список</string>
+    <string name="connection_view_message">Пожалуйста, проверьте соединение\nи повторите попытку</string>
+    <string name="connection_view_retry">Повторить</string>
+    <string name="connection_view_title">Ошибка подключения</string>
+    <string name="control_description_beauty">Ретушь</string>
+    <string name="control_description_blur_effects">Блюр</string>
+    <string name="control_description_camera_normal_close"/>
+    <string name="control_description_captions">Субтитры</string>
+    <string name="control_description_color">Фильтр</string>
+    <string name="control_description_color_effects">Фильтры</string>
+    <string name="control_description_flashlight">Вспышка</string>
+    <string name="control_description_interactions">Интерактивы</string>
+    <string name="control_description_mask">Маски</string>
+    <string name="control_description_mask_effects">Маска</string>
+    <string name="control_description_music">Музыка</string>
+    <string name="control_description_music_effects">Музыка</string>
+    <string name="control_description_mute">Откл. звук</string>
+    <string name="control_description_pip">Картинка в картинке</string>
+    <string name="control_description_speed">Скорость</string>
+    <string name="control_description_stickers">Стикеры</string>
+    <string name="control_description_switch">Перевернуть</string>
+    <string name="control_description_text_effects">Текст</string>
+    <string name="control_description_time_effects">Скорость</string>
+    <string name="control_description_timer">Таймер</string>
+    <string name="control_description_visual_effects">Эффекты</string>
+    <string name="cover_choose_description">Выберите кадр из вашего видео или изображение из галереи</string>
+    <string name="cover_choose_from_gallery">Выбрать из галереи</string>
+    <string name="cover_delete_image">Удалить</string>
+    <string name="cover_image_text">Выбрать обложку</string>
+    <string name="cover_progress_text">Пожалуйста, подождите</string>
+    <string name="cover_title_text">Выберите обложку</string>
+    <string name="downloading_error">Не удается загрузить песню. Проверьте свое подключение к Интернету.</string>
+    <string name="draft_alert_delete_positive">Удалить</string>
+    <string name="draft_alert_remove">Удалить черновик?</string>
+    <string name="draft_alert_remove_desc"/>
+    <string name="draft_alert_remove_negative">Отмена</string>
+    <string name="draft_alert_restore">У вас есть не законченное видео. Желаете продолжить? </string>
+    <string name="draft_alert_restore_desc"/>
+    <string name="draft_alert_restore_negative">Отмена</string>
+    <string name="draft_alert_restore_positive">Продолжить</string>
+    <string name="draft_alert_save">Сохранить черновик?</string>
+    <string name="draft_alert_save_desc"/>
+    <string name="draft_alert_save_negative">Отмена</string>
+    <string name="draft_alert_save_positive">Сохранить</string>
+    <string name="draft_alert_update">Обновить черновик?</string>
+    <string name="draft_alert_update_desc"/>
+    <string name="draft_alert_update_negative">Отмена</string>
+    <string name="draft_alert_update_positive">Обновить</string>
+    <string name="drafts_empty_description">Нет черновиков</string>
+    <string name="drafts_options_delete">Удалить</string>
+    <string name="drafts_options_edit">Изменить</string>
+    <string name="drafts_title">Черновики</string>
+    <string name="edit_track_added_sound_title">Добавленный звук</string>
+    <string name="edit_track_audio_duration">Продолжительность аудио</string>
+    <string name="edit_track_audio_duration_init_value">0:00.0</string>
+    <string name="edit_track_duration_error">Аудио должно быть длиннее %1$.1f секунд</string>
+    <string name="edit_track_fade_in_title">Нарастание</string>
+    <string name="edit_track_fade_out_title">Затухание</string>
+    <string name="edit_track_fade_value">%1$.1f с</string>
+    <string name="edit_track_original_sound_title">Оригинальный звук</string>
+    <string name="edit_track_volume_percent">%1$d%%</string>
+    <string name="edit_track_volume_title">Громкость</string>
+    <string name="editor_add_sound">Добавить звук</string>
+    <string name="editor_alert_adjust_clips">Внимание! Вы потеряете текущие настройки\nредактирования. Продолжить?</string>
+    <string name="editor_alert_adjust_clips_desc"/>
+    <string name="editor_alert_adjust_clips_negative">Отмена</string>
+    <string name="editor_alert_adjust_clips_positive">Продолжить</string>
+    <string name="editor_alert_create">Создать</string>
+    <string name="editor_alert_create_new_captions">Создать новые субтитры?</string>
+    <string name="editor_alert_export_interrupted">Экспорт был прерван</string>
+    <string name="editor_alert_export_interrupted_desc"/>
+    <string name="editor_alert_export_interrupted_negative">Отмена</string>
+    <string name="editor_alert_export_interrupted_positive">Повторить</string>
+    <string name="editor_alert_import_failed">Загрузка была прервана</string>
+    <string name="editor_alert_import_failed_desc"/>
+    <string name="editor_alert_import_failed_negative">Отмена</string>
+    <string name="editor_alert_import_failed_positive">Повторить</string>
+    <string name="editor_alert_previous_will_be_deleted">Созданные ранее субтитры будут удалены.</string>
+    <string name="editor_alert_reset_all">Сбросить все?</string>
+    <string name="editor_alert_reset_all_desc"/>
+    <string name="editor_alert_reset_all_negative">Отмена</string>
+    <string name="editor_alert_reset_all_positive">Сбросить</string>
+    <string name="editor_alert_reset_all_single_video">Хотите записать новое видео?</string>
+    <string name="editor_alert_reset_all_single_video_desc"/>
+    <string name="editor_alert_reset_all_single_video_negative">Сбросить</string>
+    <string name="editor_alert_reset_all_single_video_positive">Начать</string>
+    <string name="editor_alert_reset_effects">Сбросить изменения?</string>
+    <string name="editor_alert_reset_effects_desc"/>
+    <string name="editor_alert_reset_effects_negative">Отмена</string>
+    <string name="editor_alert_reset_effects_positive">Сбросить</string>
+    <string name="editor_auto_cut_recommended_sounds">Рекомендованная музыка</string>
+    <string name="editor_cancel">Отмена</string>
+    <string name="editor_discard_changes">Отменить изменения</string>
+    <string name="editor_done">Готово</string>
+    <string name="editor_effect_empty_name"/>
+    <string name="editor_effect_hint">Нажмите и удерживайте</string>
+    <string name="editor_effect_masks_hint">Нажмите и удерживайте чтобы применить маску</string>
+    <string name="editor_effect_time_hint">Нажмите и удерживайте чтобы добавить эффект</string>
+    <string name="editor_effect_undo">Отменить</string>
+    <string name="editor_next">Далее</string>
+    <string name="editor_trim_video">Коррекция</string>
+    <string name="editor_update_draft">Обновить драфт</string>
+    <string name="equalizer_effect_baritone">Баритон</string>
+    <string name="equalizer_effect_echo">Эхо</string>
+    <string name="equalizer_effect_elf">Эльф</string>
+    <string name="equalizer_effect_giant">Гигант</string>
+    <string name="equalizer_effect_robot">Робот</string>
+    <string name="equalizer_effect_squirrel">Белка</string>
+    <string name="equalizer_effect_vibrato">Вибрато</string>
+    <string name="err_apply_mask_to_record_video">Используй маску для записи видео</string>
+    <string name="err_camera_recording">Ошибка камеры</string>
+    <string name="err_cover_image">Не удалось создать обложку</string>
+    <string name="err_draft_export">Не удалось сохранить черновик</string>
+    <string name="err_editor_network_connection_failure">Ошибка подключения</string>
+    <string name="err_file_not_supported">Файл не поддерживается</string>
+    <string name="err_gallery_broken_file">Файл поврежден</string>
+    <string name="err_gallery_not_supported_file">Медиа файл не поддерживается</string>
+    <string name="err_no_space_left">Недостаточно свободной памяти</string>
+    <string name="err_no_space_left_recording">Закончилось место на диске. Запись отменена.</string>
+    <string name="err_no_time_left">Максимальная длина видео %1$.1f секунды</string>
+    <string name="err_transition_disabled">Чтобы добавить переход, видео должно быть больше %1$.1f секунды</string>
+    <string name="err_trimmer_internal">Ошибка при создании видео</string>
+    <string name="err_trimmer_invalid_duration">Продолжительность видео должна составлять от %1$d до %2$d секунд</string>
+    <string name="err_trimmer_invalid_duration_not_enough">Запишите хотя бы %1$d секунды</string>
+    <string name="err_trimmer_max_videos">Максимальное количество доступных файлов %1$d</string>
+    <string name="err_video_creation">Не удалось создать видео</string>
+    <string name="error_icon_content_description">Ошибка</string>
+    <string name="error_invalid_duration_music_track">Минимальная длительность музыкального трека - %1$.1f сек.</string>
+    <string name="error_invalid_duration_object_effect">Минимальная длительность эффекта - %1$.1f сек.</string>
+    <string name="error_invalid_duration_voice_recording">Мин. Продолжительность записи голоса - %1$.1f сек.</string>
+    <string name="error_no_space">Нет места</string>
+    <string name="error_track_limit">Максимальное количество доступных треков - %1$d</string>
+    <string name="error_voice_recording_delete_file">Внутренняя ошибка при попытке удалить файл записи голоса</string>
+    <string name="error_voice_recording_start">Ошибка при записи голоса</string>
+    <string name="exception_msg_mask_is_not_available">Извините, маска недоступна</string>
+    <string name="exception_msg_mask_is_not_found">Извините, маска недоступна</string>
+    <string name="exception_msg_network_unavailable">Сеть недоступна</string>
+    <string name="exception_msg_no_space_left">Не достаточно свободного места для применения эффекта</string>
+    <string name="exception_msg_server_is_not_available">Извините, сервер недоступен</string>
+    <string name="exception_msg_unknown_error">Неизвестная ошибка</string>
+    <string name="exo_download_completed">Скачивание завершено</string>
+    <string name="exo_download_description">Скачать</string>
+    <string name="exo_download_downloading">Скачивание…</string>
+    <string name="exo_download_failed">Ошибка скачивания</string>
+    <string name="exo_download_notification_channel_name">Скачивания</string>
+    <string name="exo_download_paused">Скачивание приостановлено</string>
+    <string name="exo_download_paused_for_network">Ожидание подключения к сети</string>
+    <string name="exo_download_paused_for_wifi">Ожидание подключения к Wi-Fi</string>
+    <string name="exo_download_removing">Удаление скачанных файлов…</string>
+    <string name="export_codec_error">Ошибка кодеков</string>
+    <string name="export_notification_fail">Ошибка при создании видео</string>
+    <string name="export_notification_started">Создаем видео</string>
+    <string name="export_notification_success">Видео готово</string>
+    <string name="export_result_error">Ошибка при создании видео</string>
+    <string name="export_unknown_error">Ошибка экспорта</string>
+    <string name="exposed_dropdown_menu_content_description">Показать раскрывающееся меню</string>
+    <string name="gallery">Галерея</string>
+    <string name="gallery_album_all_media">Все</string>
+    <string name="gallery_album_untitled">без названия</string>
+    <string name="gallery_autocut">AI Clipping</string>
+    <string name="gallery_empty_image_list">Изображения не найдены</string>
+    <string name="gallery_empty_media_list">Медиафайлы не найдены</string>
+    <string name="gallery_empty_video_list">Видео не найдены</string>
+    <string name="gallery_next">Выбрать</string>
+    <string name="gallery_next_amount">Выбрать (%1$d)</string>
+    <string name="gallery_selection_count_default">Выберите файлы</string>
+    <string name="gallery_tab_title_image">Изображение</string>
+    <string name="gallery_tab_title_video">Видео</string>
+    <string name="hands_free_record_button_text">Начать отсчет</string>
+    <string name="hands_free_timeline_duration_formater">%1$d.%2$d c</string>
+    <string name="hands_free_timeline_hint">Установите продолжительность видео:</string>
+    <string name="hands_free_timer_duration_formater">%1$d c</string>
+    <string gender="unknown" name="header_description">Заголовок</string>
+    <string name="icon_content_description">Значок диалогового окна</string>
+    <string gender="unknown" name="image_description">Изображение</string>
+    <string gender="unknown" name="imagebutton_description">Кнопка, изображение</string>
+    <string name="interaction_answer">Ответ будет здесь</string>
+    <string name="interaction_cancel">Отмена</string>
+    <string name="interaction_err_no_question">Добавить вопрос</string>
+    <string name="interaction_interest_err">Введите интерес</string>
+    <string name="interaction_interest_err_loading">Ошибка при загрузке интересов</string>
+    <string name="interaction_interest_hint">Интерес</string>
+    <string name="interaction_poll_negative_hint">Нет</string>
+    <string name="interaction_poll_positive_hint">Да</string>
+    <string name="interaction_poll_question">Создать опрос</string>
+    <string name="interaction_question">Задайте вопрос…</string>
+    <string name="interaction_quiz_empty_answer">Другой ответ</string>
+    <string name="interaction_quiz_err_small_count">Добавьте не менее 2-ух ответов</string>
+    <string name="interaction_quiz_hint">Создать тест…</string>
+    <string name="interaction_quiz_selection_popup">Нажмите здесь, чтобы ответить правильно</string>
+    <string name="interactions_desc">Пользователи могут взаимодействовать с интерактивами</string>
+    <string name="interactions_title">Интерактивы</string>
+    <string name="internal_error">Внутренняя ошибка</string>
+    <string name="item_view_role_description">Вкладка</string>
+    <string name="label_camera_effects_luts">Фильтр</string>
+    <string name="label_camera_effects_mask">Маски</string>
+    <string name="language_english">Английский</string>
+    <string name="language_mandarin">Китайский</string>
+    <string name="language_portuguese">Португальский</string>
+    <string name="language_spanish">Испанский</string>
+    <string gender="unknown" name="link_description">Ссылка</string>
+    <string name="loading_export_description">Пожалуйста, не блокируйте экран и не переходите в другие приложения</string>
+    <string name="loading_export_draft_description">Пожалуйста, не блокируйте экран и не переходите в другие приложения</string>
+    <string name="loading_export_draft_title">Экспорт черновика</string>
+    <string name="loading_export_title">Экспорт видео</string>
+    <string name="loading_import_description">Пожалуйста, не блокируйте экран и не переходите в другие приложения</string>
+    <string name="loading_import_title">Загрузка медиа</string>
+    <string name="material_clock_toggle_content_description">Выберите AM (до полудня) или PM (после полудня)</string>
+    <string name="material_hour_selection">Выберите час</string>
+    <string name="material_hour_suffix">%1$s ч.</string>
+    <string name="material_minute_selection">Выберите минуты</string>
+    <string name="material_minute_suffix">%1$s мин.</string>
+    <string name="material_timepicker_am">AM</string>
+    <string name="material_timepicker_clock_mode_description">Чтобы ввести время, перейдите в режим часов.</string>
+    <string name="material_timepicker_hour">Час</string>
+    <string name="material_timepicker_minute">Минуты</string>
+    <string name="material_timepicker_pm">PM</string>
+    <string name="material_timepicker_select_time">Выбор времени</string>
+    <string name="material_timepicker_text_input_mode_description">Чтобы ввести время, перейдите в режим ввода текста.</string>
+    <string gender="unknown" name="menu_description">Меню</string>
+    <string name="menu_item_paste">Вставить</string>
+    <string gender="unknown" name="menubar_description">Панель меню</string>
+    <string gender="unknown" name="menuitem_description">Элемент меню</string>
+    <string name="message_record_first_video">Запись не должна быть менее %1$s</string>
+    <string name="message_record_video_duration">{0,choice,0#0 секунд|1#1 секунда|1&lt;{0} секунды}</string>
+    <string name="msg_draft_saved">Черновик сохранен</string>
+    <string name="mtrl_badge_numberless_content_description">Новое уведомление</string>
+    <string name="mtrl_chip_close_icon_content_description">Удалить \"%1$s\"</string>
+    <string name="mtrl_exceed_max_badge_number_content_description" ns2:ignore="PluralsCandidate">Новых уведомлений больше %1$d</string>
+    <string name="mtrl_picker_a11y_next_month">Перейти к следующему месяцу</string>
+    <string name="mtrl_picker_a11y_prev_month">Перейти к предыдущему месяцу</string>
+    <string name="mtrl_picker_announce_current_selection">Выбранный элемент: %1$s</string>
+    <string name="mtrl_picker_cancel">Отмена</string>
+    <string name="mtrl_picker_confirm">ОК</string>
+    <string name="mtrl_picker_date_header_selected">%1$s</string>
+    <string name="mtrl_picker_date_header_title">Выберите дату</string>
+    <string name="mtrl_picker_date_header_unselected">Выбранная дата</string>
+    <string name="mtrl_picker_day_of_week_column_header">Столбец со днями недели: %1$s</string>
+    <string name="mtrl_picker_invalid_format">Недействительный формат.</string>
+    <string name="mtrl_picker_invalid_format_example">Пример: %1$s</string>
+    <string name="mtrl_picker_invalid_format_use">Используйте: %1$s</string>
+    <string name="mtrl_picker_invalid_range">Недопустимый диапазон.</string>
+    <string name="mtrl_picker_navigate_to_year_description">Перейти к %1$s году</string>
+    <string name="mtrl_picker_out_of_range">Вне диапазона: %1$s</string>
+    <string name="mtrl_picker_range_header_only_end_selected">Дата начала – %1$s</string>
+    <string name="mtrl_picker_range_header_only_start_selected">%1$s – дата окончания</string>
+    <string name="mtrl_picker_range_header_selected">%1$s – %2$s</string>
+    <string name="mtrl_picker_range_header_title">Выберите диапазон дат</string>
+    <string name="mtrl_picker_range_header_unselected">Дата начала – дата окончания</string>
+    <string name="mtrl_picker_save">Сохранить</string>
+    <string name="mtrl_picker_text_input_date_hint">Дата</string>
+    <string name="mtrl_picker_text_input_date_range_end_hint">Дата окончания</string>
+    <string name="mtrl_picker_text_input_date_range_start_hint">Дата начала</string>
+    <string name="mtrl_picker_text_input_day_abbr">д</string>
+    <string name="mtrl_picker_text_input_month_abbr">м</string>
+    <string name="mtrl_picker_text_input_year_abbr">г</string>
+    <string name="mtrl_picker_toggle_to_calendar_input_mode">Перейти в режим выбора дней</string>
+    <string name="mtrl_picker_toggle_to_day_selection">Нажмите, чтобы перейти к выбору дня</string>
+    <string name="mtrl_picker_toggle_to_text_input_mode">Перейти в режим ввода текста</string>
+    <string name="mtrl_picker_toggle_to_year_selection">Нажмите, чтобы перейти к выбору года</string>
+    <string name="mtrl_timepicker_cancel">Отмена</string>
+    <string name="mtrl_timepicker_confirm">ОК</string>
+    <string name="music_library_all_tracks">Все треки</string>
+    <string name="music_library_collections">Коллекции</string>
+    <string name="music_library_content_unavailable">Аудио временно недоступно</string>
+    <string name="music_library_favorites_header">Нет любимых треков</string>
+    <string name="music_library_favorites_message">Пометьте свои любимые треки и всегда сможете найти их здесь.</string>
+    <string name="music_library_genres">Жанры</string>
+    <string name="music_library_header_music">Музыка</string>
+    <string name="music_library_no_connection">Отсутствует интернет соединение</string>
+    <string name="music_library_no_connection_check">Проверьте свое соединение или попробуйте еще раз.</string>
+    <string name="music_library_no_connection_try_again">Повторить</string>
+    <string name="music_library_popular">Популярные</string>
+    <string name="music_library_recents_header">Нет недавних треков</string>
+    <string name="music_library_recents_message">Треки которые вы использовали в своих видео будут показаны здесь.</string>
+    <string name="music_library_search_cancel">Отмена</string>
+    <string name="music_library_search_hint">Поиск</string>
+    <string name="music_library_search_no_matches">Нет совпадений</string>
+    <string name="music_library_show_more">Показать Больше</string>
+    <string name="music_library_snackbar_error">Извините, аудиоконтент временно недоступен</string>
+    <string name="music_library_tab_favorites">Любимые</string>
+    <string name="music_library_tab_featured">Рекомендуемые</string>
+    <string name="music_library_tab_recents">Недавние</string>
+    <string name="music_library_view_all">Показать все</string>
+    <string name="not_supported_dialog_close">Закрыть</string>
+    <string name="not_supported_dialog_description">Извините, ваше устройство не поддерживается</string>
+    <string name="notification_damage_music_file">Музыкальный файл поврежден</string>
+    <string name="notification_speed_changed">Скорость записи %1$s</string>
+    <string name="number_percent">%1$d%%</string>
+    <string name="password_toggle_content_description">Показать пароль</string>
+    <string name="permission_camera_description_message">Дать доступ к вашей камере и микрофону, чтобы создавать и редактировать фотографии или видео, а также записывать аудио.</string>
+    <string name="permission_dialog_allow">Разрешить</string>
+    <string name="permission_dialog_settings">Настройки</string>
+    <string name="permission_drafts_description_message">Дать доступ к вашему хранилищу для создания видео из ваших черновиков.</string>
+    <string name="permission_editor_description_message">Дать доступ к вашему хранилищу для создания видео из ваших изображений и записей.</string>
+    <string name="permission_gallery_description_message">Дать доступ к вашему хранилищу для создания видео из ваших изображений и записей.</string>
+    <string name="permission_library_description_message">Разрешить доступ к вашему хранилищу для выбора звуковых дорожек с вашего устройства.</string>
+    <string name="permission_trimmer_description_message">Дать доступ к вашему хранилищу для создания видео из ваших изображений и записей.</string>
+    <string name="pip_action_centered">Центрированный</string>
+    <string name="pip_action_original">Оригинальный</string>
+    <string name="pip_action_round">Круглый</string>
+    <string name="pip_action_square">Квадратный</string>
+    <string name="pip_action_swap_horizontal">Переключить</string>
+    <string name="pip_action_swap_vertical">Переключить</string>
+    <string name="pip_mode_floating">Плавающий</string>
+    <string name="pip_mode_left_right">Портретный</string>
+    <string name="pip_mode_react">Реакция</string>
+    <string name="pip_mode_top_bottom">Пейзажный</string>
+    <string name="pip_not_supported">Картинка в картинке не поддерживается вашим токеном. Обратитесь к аккаунт менеджеру</string>
+    <string name="pip_title">Настройки макета</string>
+    <string name="preview_error">Ошибка создания обложки</string>
+    <string name="preview_select">Выбрать</string>
+    <string name="preview_unselect">Снять выделение</string>
+    <string gender="unknown" name="progressbar_description">Индикатор прогресса</string>
+    <string gender="unknown" name="radiogroup_description">Группа кнопок-переключателей</string>
+    <string name="remove_track">Сбросить трек</string>
+    <string gender="unknown" name="rn_tab_description">Вкладка</string>
+    <string gender="unknown" name="scrollbar_description">Полоса прокрутки</string>
+    <string msgid="6264217191555673260" name="search_menu_title">"Поиск"</string>
+    <string name="sharing_close">Закрыть</string>
+    <string name="sharing_export_app_not_found">Приложение для обмена не найдено</string>
+    <string name="sharing_export_is_not_finished">Подождите, видео экспортируется!</string>
+    <string name="sharing_fb_reels">Facebook\nReels</string>
+    <string name="sharing_fb_stories">Facebook\nStories</string>
+    <string name="sharing_instagram_stories">Instagram\nStories</string>
+    <string name="sharing_other">Другое</string>
+    <string name="sharing_title">Поделиться видео</string>
+    <string gender="unknown" name="spinbutton_description">Кнопка кольцевого списка</string>
+    <string gender="unknown" name="state_busy_description">занято</string>
+    <string gender="unknown" name="state_collapsed_description">свернуто</string>
+    <string gender="unknown" name="state_expanded_description">развернуто</string>
+    <string gender="unknown" name="state_mixed_description">смешано</string>
+    <string gender="unknown" name="state_off_description">выкл</string>
+    <string gender="unknown" name="state_on_description">включено</string>
+    <string gender="unknown" name="state_unselected_description">не выбрано</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">">999"</string>
+    <string name="stickers_empty_list">Стикеры не найдены</string>
+    <string name="stickers_no_key">Стикеры появятся после того как вы установите Giphy ключ</string>
+    <string name="stickers_search_cancel">Закрыть</string>
+    <string name="stickers_search_clear">Очистить</string>
+    <string name="stickers_search_hint">Поиск</string>
+    <string gender="unknown" name="summary_description">Сводка</string>
+    <string gender="unknown" name="tablist_description">Список вкладок</string>
+    <string name="time_effect_rapid">2x</string>
+    <string name="time_effect_slow_motion">0.5x</string>
+    <string gender="unknown" name="timer_description">Таймер</string>
+    <string gender="unknown" name="toolbar_description">Панель инструментов</string>
+    <string name="track_cut_choose">Выберите часть трека для видео</string>
+    <string name="track_loading_failed">Аудиоконтент временно недоступен</string>
+    <string name="track_search_cancel">Отменить</string>
+    <string name="track_validation_error_broken">Сломанный файл</string>
+    <string name="track_validation_error_min_duration">Короткая продолжительность трека</string>
+    <string name="track_validation_error_network_uri">Сетевой URI не поддерживается</string>
+    <string name="track_validation_error_not_supported">Не поддерживается</string>
+    <string name="track_validation_error_path">Неверный путь</string>
+    <string name="transition_effect_empty"/>
+    <string name="transition_effect_fade">Затемнение</string>
+    <string name="transition_effect_scroll_down">Сдвиг вниз</string>
+    <string name="transition_effect_scroll_left">Сдвиг влево</string>
+    <string name="transition_effect_scroll_right">Сдвиг вправо</string>
+    <string name="transition_effect_scroll_up">Сдвиг вверх</string>
+    <string name="transition_effect_spin">Вращение</string>
+    <string name="transition_effect_whip_down">Размытие вниз</string>
+    <string name="transition_effect_whip_left">Размытие влево</string>
+    <string name="transition_effect_whip_right">Размытие вправо</string>
+    <string name="transition_effect_whip_up">Размытие вверх</string>
+    <string name="trimmer_action_delete">Удалить</string>
+    <string name="trimmer_action_rotate">Повернуть</string>
+    <string name="trimmer_action_split">Разделить</string>
+    <string name="trimmer_action_trim">Подрезать</string>
+    <string name="trimmer_action_volume">Громкость</string>
+    <string name="trimmer_drag_hint">Тяните, чтобы переставить</string>
+    <string name="trimmer_duration_format_exceed">Максимальная длина %1$s сек.</string>
+    <string name="trimmer_duration_format_normal">%1$s сек.</string>
+    <string name="trimmer_error_delete">Последнее видео не может быть удалено</string>
+    <string name="trimmer_error_split">Выбрана недопустимая позиция</string>
+    <string name="video_creation_unavailable">Создание видеоконтента временно недоступно</string>
+    <string name="video_creation_unavailable_close_button">Закрыть</string>
+    <string name="video_time_interval_formatter_minutes">%1$d мин</string>
+    <string name="video_time_interval_formatter_seconds">%1$d сек</string>
+    <string name="visual_effect_acid_whip">Acid-whip</string>
+    <string name="visual_effect_cathode">Cathode</string>
+    <string name="visual_effect_dslr_kaleidoscope">Mirror 2</string>
+    <string name="visual_effect_dv_cam">DV Cam</string>
+    <string name="visual_effect_flash">Flash</string>
+    <string name="visual_effect_glitch">Glitch</string>
+    <string name="visual_effect_glitch2">Glitch 2</string>
+    <string name="visual_effect_glitch3">Glitch 3</string>
+    <string name="visual_effect_heat_map">Heat map</string>
+    <string name="visual_effect_kaleidoscope">Mirror</string>
+    <string name="visual_effect_lumiere">Lumiere</string>
+    <string name="visual_effect_pixel_dynamic">Pixel dynamic</string>
+    <string name="visual_effect_pixel_static">Pixel static</string>
+    <string name="visual_effect_polaroid">Polaroid</string>
+    <string name="visual_effect_rave">Rave</string>
+    <string name="visual_effect_soul">Soul</string>
+    <string name="visual_effect_stars">Stars</string>
+    <string name="visual_effect_transition1">Transition</string>
+    <string name="visual_effect_transition2">Transition 4</string>
+    <string name="visual_effect_transition3">Transition 3</string>
+    <string name="visual_effect_transition4">Transition 2</string>
+    <string name="visual_effect_transition_defocus">Blur out</string>
+    <string name="visual_effect_transition_diagonal">Corner flip</string>
+    <string name="visual_effect_transition_tunnel_mirrored">Warp back</string>
+    <string name="visual_effect_transition_tunnel_vision">Zoom out</string>
+    <string name="visual_effect_tv_foam">TV Foam</string>
+    <string name="visual_effect_twitch">Twitch</string>
+    <string name="visual_effect_vhs">VHS</string>
+    <string name="visual_effect_vhs2">VHS 2</string>
+    <string name="visual_effect_zoom">Zoom</string>
+    <string name="visual_effect_zoom2">Zoom 2</string>
+</resources>

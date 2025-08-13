@@ -1,0 +1,135 @@
+{
+  "apply_order": 80,
+  "depends": ["camera"],
+  "assets": {
+    "attachments": {
+      "softlight_color": {
+        "type": "color"
+      }
+    },
+    "faces": {
+      "face:@face_idx": {
+        "index": @face_idx,
+        "mesh": "face_stream:@face_idx"
+      }
+    },
+    "images": {
+      "@soft": {
+        "file_name": "/bnb_prefabs/softlight/images/soft.ktx",
+        "type": "texture"
+      }
+    },
+    "materials": {
+      "$builtin$materials/copy_pixels.1": {
+        "parameters": {},
+        "samplers": [
+            {
+                "image": "softlight_color",
+                "name": "tex_src"
+            }
+        ],
+        "state": {
+            "backfaces": true,
+            "blend": "off",
+            "colorwrite": true,
+            "ztest": false,
+            "zwrite": false
+        }
+    },
+      "softlight/shaders/softlight": {
+        "path": "/bnb_prefabs/softlight/shaders/softlight",
+        "samplers": [
+          {
+            "name": "tex_camera",
+            "image": "base_main_color"
+          },
+          {
+            "name": "tex_softlight",
+            "image": "soft"
+          }
+        ],
+        "state": {
+          "@blend": "alpha",
+          "backfaces": true,
+          "colorwrite": true,
+          "ztest": true,
+          "zwrite": true
+        },
+        "parameters": {
+          "@strength": {
+            "type": "vec4",
+            "value": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    "meshes": {
+      "face_stream:@face_idx": "$builtin$meshes/face.stream:@face_idx"
+    }
+  },
+  "components": {
+    "face_tracker:@face_idx": {
+        "face": "face:@face_idx",
+        "type": "face_tracker"
+    }
+},
+  "entities": {
+    "softlight:@face_idx": {
+      "components": {
+          "mesh_instance": {
+              "materials": ["softlight/shaders/softlight"],
+              "mesh": "face_stream:@face_idx"
+          }
+      },
+      "layer": "softlight_layer:@face_idx"
+  },
+  "softlight_color_rt_copy": {
+    "components": {
+        "mesh_instance": {
+            "materials": ["$builtin$materials/copy_pixels.1"],
+            "mesh": "$builtin$meshes/fs_tri"
+        }
+    },
+    "layer": "softlight_color_rt_copy"
+},
+    "face_tracker:@face_idx": {
+      "components": ["face_tracker:@face_idx"]
+  }
+  },
+  "hierarchy": {
+    "face_tracker:@face_idx": [
+      "softlight:@face_idx"
+  ],
+    "root": [
+      "face_tracker:@face_idx",
+      "softlight_color_rt_copy"
+    ]
+  },
+  "render_list": {
+    "default": [
+      {
+        "layer": "camera_layer",
+        "render_target": "softlight_composer_rt"
+      },
+      {
+        "layer": "softlight_layer:@face_idx",
+        "render_target": "softlight_composer_rt"
+      },
+      {
+        "layer": "softlight_color_rt_copy",
+        "render_target": "base_rt"
+      }
+    ]
+  },
+  "render_targets": {
+    "softlight_composer_rt": [
+      "softlight_color"
+    ]
+  },
+  "script": "/bnb_prefabs/softlight/scripts/index.js"
+}

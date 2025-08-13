@@ -1,0 +1,11 @@
+{
+    "type": "object",
+    "description": "Remove eye circles.",
+    "properties": {
+        "alpha": {
+            "type": "number",
+            "default": 0.8,
+            "description": "Transparency for eyes circles."
+        }
+    }
+}

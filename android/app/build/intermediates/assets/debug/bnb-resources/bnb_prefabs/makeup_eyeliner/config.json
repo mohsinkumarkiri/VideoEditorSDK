@@ -1,0 +1,70 @@
+{
+    "apply_order": 140,
+    "depends": ["makeup_base"],
+    "assets": {
+        "materials": {
+            "shaders/eyeliner/blur_hsv": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/blur_hsv",
+                "samplers": 
+                [
+                    { "name": "tex_input", "image": "base_main_color" },
+                    { "name": "tex_mask",  "image": "shadows_eyeliner_tex_c" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "defines": ["BNB_MAKEUP_EYELINER"]
+            },
+            "shaders/eyeliner/tone": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/tone",
+                "samplers": 
+                [
+                    { "name": "tex_blur_hsv", "image": "blur_hsv" },
+                    { "name": "tex_mean",     "image": "mean0" },
+                    { "name": "tex_stddev",   "image": "stddev0" },
+                    { "name": "tex_mask",     "image": "shadows_eyeliner_tex_c" }
+                ],
+                "state": { "blend": "alpha", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "parameters": 
+                {
+					"eyeliner_abcd":     { "type": "vec4", "value": [1, 0, 0.2, 0] },
+					"eyeliner_krp":      { "type": "vec4", "value": [1, 1, -1, 0] },
+					"eyeliner_rgb_maxa": { "type": "vec4", "value": [0.43, 0.37, 0.81, 0.88235] }
+                },
+                "defines": ["BNB_MAKEUP_EYELINER"]
+            }
+        }
+    },
+    "entities": {
+        "eyeliner_ent": { 
+            "components": { "mesh_instance" : {
+                "materials":[
+                    "shaders/eyeliner/blur_hsv",
+                    "shaders/mean",
+                    "shaders/stddev",
+                    "shaders/eyeliner/tone"
+                ],
+                "mesh": "/bnb_prefabs/makeup_eyeliner/meshes/eyeliner.bsm2"} }, 
+            "layers": [
+                "eyeliner_blur_hsv_layer",
+                "eyeliner_mean_layer",
+                "eyeliner_stddev_layer",
+                "eyeliner_tone_layer"
+            ]
+        }
+    },
+    "hierarchy": {
+        "root": [
+            "eyeliner_ent"
+        ]
+    },
+    "render_list": {
+        "default": [
+            { "layer": "eyeliner_blur_hsv_layer", "sub_geometries":["eyeliner/blur_hsv"],"render_target": "blur_hsv_rt" },
+            { "layer": "eyeliner_mean_layer",     "sub_geometries":["mean"], "render_target": "mean_rt" },
+            { "layer": "eyeliner_stddev_layer",   "sub_geometries":["stddev"], "render_target": "stddev_rt" },
+            { "layer": "eyeliner_tone_layer",     "sub_geometries":["eyeliner/tone"],"render_target": "base_rt" }
+        ]
+    },
+    "script": "/bnb_prefabs/makeup_eyeliner/scripts/index.js"
+}

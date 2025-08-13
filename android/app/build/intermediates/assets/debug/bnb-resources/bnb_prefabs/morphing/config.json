@@ -1,0 +1,119 @@
+{
+    "apply_order": 200,
+    "depends": ["camera"],
+    "assets": {
+        "attachments": {
+            "morph_draw": { "type": "color", "format": "rg16f", "clear": [0,0,0,0], "load_state": "clear", "store_state": "save", "width": 0, "height": 480, "filtering": "linear" },
+            "morph_draw_z": { "type": "depth", "clear": [1], "load_state": "clear", "store_state": "save"},
+            "morph_blur_h": { "type": "color", "format": "rg16f", "clear": [0,0,0,0], "load_state": "clear", "store_state": "save", "width": 0, "height": 480, "filtering": "linear" },
+            "morph_blur_v": { "type": "color", "format": "rg16f", "clear": [0,0,0,0], "load_state": "clear", "store_state": "save", "width": 0, "height": 480, "filtering": "linear" },
+            "morph_apply": {"type": "color", "clear": [0, 0, 0, 1], "load_state": "clear", "store_state": "save"}
+        },
+        "images":
+        {
+            "morphs.ktx": { "file_name": "/bnb_prefabs/morphing/textures/morphs.ktx", "type": "texture"}
+        },
+        "faces": {
+            "face:@face_idx": {
+                "index": @face_idx,
+                "mesh" : "face_stream:@face_idx"
+            }
+        },
+        "materials": {
+            "shaders/morphing/draw:@face_idx": 
+            {
+                "path": "/bnb_prefabs/morphing/shaders/draw",
+                "samplers": 
+                [
+                    { "name": "tex_morphs", "image": "morphs.ktx" }
+                ],
+                "state": { "blend": "off", "backfaces": false, "colorwrite": true, "ztest": true, "zwrite": true },
+                "parameters": {
+                    "@morphs_00": { "type": "vec4", "value": [0, 0, 0, 0] },
+                    "@morphs_04": { "type": "vec4", "value": [0, 0, 0, 0] },
+                    "@morphs_08": { "type": "vec4", "value": [0, 0, 0, 0] },
+                    "@morphs_12": { "type": "vec4", "value": [0, 0, 0, 0] },
+                    "@morphs_16": { "type": "vec4", "value": [0, 0, 0, 0] },
+                    "@morphs_20": { "type": "vec4", "value": [0, 0, 0, 0] },
+                    "@morphs_24": { "type": "vec4", "value": [0, 0, 0, 0] },
+                    "@morphs_28": { "type": "vec4", "value": [0, 0, 0, 0] },
+                    "@morphs_32": { "type": "vec4", "value": [0, 0, 0, 0] },
+                    "@morphs_36": { "type": "vec4", "value": [0, 0, 0, 0] }
+                },
+                "instance_count" : 9
+            },
+            "shaders/morphing/blur_h": 
+            {
+                "vs_path": "/bnb_prefabs/morphing/shaders/hblur",
+                "fs_path": "/bnb_prefabs/morphing/shaders/blur",
+                "samplers": 
+                [
+                    { "name": "tex_src", "image": "morph_draw" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false }
+            },
+            "shaders/morphing/blur_v": 
+            {
+                "vs_path": "/bnb_prefabs/morphing/shaders/vblur",
+                "fs_path": "/bnb_prefabs/morphing/shaders/blur",
+                "samplers": 
+                [
+                    { "name": "tex_src", "image": "morph_blur_h" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false }
+            },
+            "shaders/morphing/apply": 
+            {
+                "path": "/bnb_prefabs/morphing/shaders/apply",
+                "samplers": 
+                [
+                    { "name": "tex_warp", "image": "morph_blur_v" },
+                    { "name": "tex_frame", "image": "base_main_color" }
+                ],
+                "state": { "blend": "off", "backfaces": false, "colorwrite": true, "ztest": false, "zwrite": false }
+            }
+        },
+        "meshes": {
+            "face_stream:@face_idx": "$builtin$meshes/face.stream:@face_idx"
+        }
+    },
+    "components": {
+        "face_tracker:@face_idx": {
+            "face": "face:@face_idx",
+            "type": "face_tracker"
+        }
+    },
+    "entities": {
+        "face_tracker:@face_idx": {
+            "components": ["face_tracker:@face_idx"]
+        },
+        "morph_draw:@face_idx": {"components": { "mesh_instance":{"mesh": "face_stream:@face_idx", "materials": [ "shaders/morphing/draw:@face_idx" ] }}, "layer": "morph_draw"},
+        "morph_blur_h":{ "components": { "mesh_instance":{ "mesh": "$builtin$meshes/fs_tri", "materials": [ "shaders/morphing/blur_h" ]}}, "layer": "morph_blur_h"},
+        "morph_blur_v":{ "components": { "mesh_instance":{ "mesh": "$builtin$meshes/fs_tri", "materials": [ "shaders/morphing/blur_v" ]}}, "layer": "morph_blur_v"},
+        "morph_apply":{ "components": { "mesh_instance":{ "mesh": "$builtin$meshes/fs_tri", "materials": [ "shaders/morphing/apply" ]}},"layer": "morph_apply"}
+    },
+    "hierarchy": {
+        "face_tracker:@face_idx": [
+            "morph_draw:@face_idx"
+        ],
+        "root": [
+            "face_tracker:@face_idx"
+        ]
+    },
+    "render_list": {
+        "default": [
+            { "layer": "morph_draw", "render_target": "morph_draw" },
+            { "layer": "morph_blur_h", "render_target": "morph_blur_h" },
+            { "layer": "morph_blur_v", "render_target": "morph_blur_v" },
+            { "layer": "morph_apply", "render_target": "morph_apply", "blit": "base_rt" }
+        ]
+    },
+    "render_targets": 
+    {
+        "morph_draw": { "attachments": [ "morph_draw", "morph_draw_z" ], "width": 0, "height": 480 },
+        "morph_blur_h": { "attachments": [ "morph_blur_h" ], "width": 0, "height": 480 },
+        "morph_blur_v": { "attachments": [ "morph_blur_v" ], "width": 0, "height": 480 },
+        "morph_apply": { "attachments": [ "morph_apply" ]}
+    },
+    "script": "/bnb_prefabs/morphing/scripts/index.js"
+}

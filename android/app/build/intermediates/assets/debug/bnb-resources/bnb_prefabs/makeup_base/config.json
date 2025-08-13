@@ -1,0 +1,221 @@
+{
+    "apply_order": 90,
+    "depends": ["camera"],
+    "assets": {
+        "attachments": {
+            "liner0": { "type": "color", "format": "r8", "clear": [0,0,0,0], "load_state": "clear", "store_state": "save" },
+            "liner1": { "type": "color", "format": "r8", "clear": [0,0,0,0], "load_state": "clear", "store_state": "save" },
+            "skin_brows_lips_nn": { "type": "color", "format": "rgba8", "clear": [ 1, 1, 1, 1 ], "load_state": "clear",     "store_state": "save" },
+
+            "blur_hsv": { "type": "color", "format": "rgba8",   "clear": [ 0, 0, 0, 0 ], "load_state": "dont_care", "store_state": "save" },
+            "mean0":    { "type": "color", "format": "rgba16f",   "clear": [ 0, 0, 0, 0 ], "load_state": "dont_care", "store_state": "save", "width": 256, "height": 256, "filtering": "linear", "generate_mipmaps": true },
+            "stddev0":  { "type": "color", "format": "rgba16f", "clear": [ 0, 0, 0, 0 ], "load_state": "dont_care", "store_state": "save", "width": 256, "height": 256, "filtering": "linear", "generate_mipmaps": true },
+
+            "consiler_contour_highlighter_blush_tex_c":    { "type": "color", "format": "rgba8",   "clear": [ 0, 0, 0, 0 ], "load_state": "clear",     "store_state": "save" },
+            "shadows_eyeliner_tex_c":    { "type": "color", "format": "rgba8",   "clear": [ 0, 0, 0, 0 ], "load_state": "clear",     "store_state": "save" }
+        },
+        "images":
+        {
+            "lbrow_nn": { "recognizer_feature_name": "left_brow",  "active": true, "type": "segmentation_mask" },
+            "rbrow_nn": { "recognizer_feature_name": "right_brow", "active": true, "type": "segmentation_mask" },
+            "skin_nn":  { "recognizer_feature_name": "skin",       "active": true, "type": "segmentation_mask" },
+            "face_nn":  { "recognizer_feature_name": "face",       "active": true, "type": "segmentation_mask" },
+            "lips_nn":  { "recognizer_feature_name": "lips",       "active": true, "type": "segmentation_mask" },
+            "consiler_contour_highlighter_blush_tex": { "file_name": "/bnb_prefabs/makeup_base/textures/consiler_contour_highlighter_blush.png", "type": "texture", "mips": true, "filter": "linear" },
+            "shadows_eyeliner_tex": { "file_name": "/bnb_prefabs/makeup_base/textures/shadows_arrows.png", "type": "texture", "mips": true, "filter": "linear" },
+            "contur_smokey_tex": { "file_name": "/bnb_prefabs/makeup_base/textures/contur_smokey_06.png", "type": "texture", "mips": true, "filter": "linear" },
+            "shadows_arrows_smokey_tex": { "file_name": "/bnb_prefabs/makeup_base/textures/shadows_arrows_smokey_06.png", "type": "texture", "mips": true, "filter": "linear" },
+            "beauty_corrected_morph_tex": { "file_name": "/bnb_prefabs/makeup_base/textures/beauty_corrected_morph.ktx", "type": "texture", "mips": false, "filter": "point" }
+        },
+        "faces": {
+            "face:@face_idx": { "index": @face_idx, "mesh" : "face_stream:@face_idx" }
+        },
+        "meshes": {
+            "fs_tri": "$builtin$meshes/fs_tri",
+            "face_stream:@face_idx": "$builtin$meshes/face.stream:@face_idx"
+        },
+        "materials": {
+            "shaders/lipsliner/liner_fill": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/lipsliner/liner_fill",
+                "samplers": [],
+                "state": { "blend": "off", "backfaces": false, "colorwrite": true, "ztest": true, "zwrite": true }
+            },
+            "shaders/lipsliner/liner0": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/lipsliner/liner0",
+                "samplers": 
+                [
+                    { "name": "lips_mask", "image": "lips_nn" }
+                ],
+                "state": { "blend": "add", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false }
+            },
+            "shaders/lipsliner/liner1": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/lipsliner/liner1",
+                "samplers": 
+                [
+                    { "name": "liner0", "image": "liner0" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false }
+            },
+            "shaders/lipsliner/liner2":
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/lipsliner/liner2",
+                "samplers": 
+                [
+                    { "name": "liner1", "image": "liner1" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "parameters": 
+                {
+                    "lipsliner_r1_r2": { "type": "vec4", "value": [3, 5, 0, 0] }
+                }
+            },
+            "shaders/lipsliner/liner3":
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/lipsliner/liner3",
+                "samplers": 
+                [
+                    { "name": "liner0", "image": "liner0" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false }
+            },
+            "shaders/fake_skin_eyes_lips": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/fake_skin_eyes_lips",
+                "samplers": [],
+                "state": { "blend": "off", "backfaces": false, "colorwrite": true, "ztest": true, "zwrite": true }
+            },
+            "shaders/nn_combine": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/nn_combine",
+                "samplers": 
+                [
+                    { "name": "tex_lbrow", "image": "lbrow_nn" },
+                    { "name": "tex_rbrow", "image": "rbrow_nn" },
+                    { "name": "tex_face",  "image": "face_nn" },
+                    { "name": "tex_skin",  "image": "skin_nn" },
+                    { "name": "tex_lips",  "image": "lips_nn" },
+                    { "name": "tex_liner", "image": "liner1" }
+                ],
+                "state": { "blend": "multiply", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "parameters": 
+                {
+                    "fake_skin_nn_active": { "type": "vec4", "value": [0, 0, 0, 0] }
+                }
+            },
+            "shaders/smooth/smooth": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/smooth/smooth",
+                "samplers": [ 
+                    { "name": "tex", "image": "base_main_color" },
+                    { "name": "mask_tex0", "image": "skin_brows_lips_nn" },
+                    { "name": "mask_tex1", "image": "consiler_contour_highlighter_blush_tex_c" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "parameters": 
+                {
+                    "smooth_weights": { "type": "vec4", "value": [0, 1, 0, 0] }
+                }
+            },
+            "shaders/mean": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/mean",
+                "samplers": 
+                [
+                    { "name": "tex_blur_hsv", "image": "blur_hsv" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false }
+            },
+            "shaders/stddev": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/stddev",
+                "samplers": 
+                [
+                    { "name": "tex_mean_full", "image": "mean0" },
+                    { "name": "tex_mean",      "image": "mean0" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false }
+            },
+            "shaders/face_tex": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/face_tex",
+                "samplers": 
+                [
+                    { "name": "tex0", "image": "consiler_contour_highlighter_blush_tex" },
+                    { "name": "tex1", "image": "shadows_eyeliner_tex" },
+                    { "name": "mask", "image": "skin_brows_lips_nn" },
+                    { "name": "face", "image": "face_nn" },
+                    { "name": "correction_morph", "image": "beauty_corrected_morph_tex" },
+                    { "name": "tex_smokey0", "image": "contur_smokey_tex" },
+                    { "name": "tex_smokey1", "image": "shadows_arrows_smokey_tex" }
+                ],
+                "state": { "blend": "off", "backfaces": false, "colorwrite": true, "ztest": true, "zwrite": true },
+                "parameters": 
+                {
+                    "smokey_eyes_index": { "type": "vec4", "value": [0, 0, 0, 0] }
+                }
+            }
+        }
+    },
+    "components": {
+        "face_tracker:@face_idx": { "face": "face:@face_idx", "type": "face_tracker" }
+    },
+    "entities": {
+        "liner_fill_ent": { "components": { "mesh_instance" : { "materials": ["shaders/lipsliner/liner_fill"], "mesh": "face_stream:@face_idx"} },   "layer": "makeup_liner_fill_layer" },
+        "liner0_ent": { "components": { "mesh_instance" : { "materials": ["shaders/lipsliner/liner0"], "mesh": "fs_tri" } }, "layer": "makeup_liner0_layer" },
+        "liner1_ent": { "components": { "mesh_instance" : { "materials": ["shaders/lipsliner/liner1"], "mesh": "fs_tri" } }, "layer": "makeup_liner1_layer" },
+        "liner2_ent": { "components": { "mesh_instance" : { "materials": ["shaders/lipsliner/liner2"], "mesh": "fs_tri" } }, "layer": "makeup_liner2_layer" },
+        "liner3_ent": { "components": { "mesh_instance" : { "materials": ["shaders/lipsliner/liner3"], "mesh": "fs_tri" } }, "layer": "makeup_liner3_layer" },
+        "face_tracker:@face_idx": { "components": ["face_tracker:@face_idx"] },
+        "fake_skin_nn_face_ent": { "components": { "mesh_instance" : {"materials": ["shaders/fake_skin_eyes_lips"], "mesh": "face_stream:@face_idx"} }, "layer": "makeup_nn_face_layer" },
+        "nn_combine_ent": { "components": { "mesh_instance" : { "materials": ["shaders/nn_combine"], "mesh": "fs_tri" } }, "layer": "makeup_nn_combine_layer" },
+        "smooth_ent": { "components": { "mesh_instance" : { "materials": ["shaders/smooth/smooth"], "mesh": "fs_tri" } }, "layer": "makeup_smooth_layer" },
+        "face_tex_ent": { "components": { "mesh_instance" : {"materials": ["shaders/face_tex"], "mesh": "face_stream:@face_idx"} }, "layer": "makeup_face_tex_layer" }
+    },
+    "hierarchy": {
+        "face_tracker:@face_idx": [
+            "fake_skin_nn_face_ent",
+            "face_tex_ent",
+            "liner_fill_ent", 
+            "liner0_ent",
+            "liner1_ent",
+            "liner2_ent",
+            "liner3_ent"
+        ],
+        "root": [
+            "face_tracker:@face_idx",
+            "nn_combine_ent",
+            "smooth_ent"
+        ]
+    },
+    "render_list": {
+        "default": [
+            { "layer": "makeup_liner_fill_layer", "render_target": "liner0_z_rt" },
+            { "layer": "makeup_liner0_layer", "render_target": "liner0_z_rt" },
+            { "layer": "makeup_liner1_layer", "render_target": "liner1_rt" },
+            { "layer": "makeup_liner2_layer", "render_target": "liner0_rt" },
+            { "layer": "makeup_liner3_layer", "render_target": "liner1_rt" },
+            { "layer": "makeup_nn_face_layer", "render_target": "nn_combine_rt" },
+            { "layer": "makeup_nn_combine_layer", "render_target": "nn_combine_rt" },
+            { "layer": "makeup_face_tex_layer", "render_target": "face_tex_rt" },
+            { "layer": "makeup_smooth_layer", "render_target": "base_rt" }
+        ]
+    },
+    "render_targets": 
+    {
+        "liner0_z_rt": { "attachments": [ "liner0", "base_main_z" ] },
+        "liner0_rt": { "attachments": [ "liner0" ] },
+        "liner1_rt": { "attachments": [ "liner1" ] },
+
+        "nn_combine_rt":    [ "skin_brows_lips_nn", "base_main_z" ],
+        "blur_hsv_rt":      [ "blur_hsv" ],
+
+        "mean_rt":          { "attachments": [ "mean0" ], "width": 256, "height": 256 },
+        "stddev_rt":        { "attachments": [ "stddev0" ], "width": 256, "height": 256 },
+
+        "face_tex_rt":      [ "consiler_contour_highlighter_blush_tex_c", "shadows_eyeliner_tex_c", "base_main_z" ]
+    },
+    "script": "/bnb_prefabs/makeup_base/scripts/index.js"
+}

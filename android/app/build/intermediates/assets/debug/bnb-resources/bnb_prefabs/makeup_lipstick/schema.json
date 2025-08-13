@@ -1,0 +1,59 @@
+{
+    "type": "object",
+    "description": "Apply lipstick.",
+    "required": [
+        "color",
+        "finish",
+        "coverage"
+    ],
+    "properties": {
+        "color": {
+            "type": "string",
+            "default": "0 0 0",
+            "description": "Solid color of the region in RGB string format."
+        },
+        "finish": {
+            "type": "string",
+            "enum": [
+                "shimmer",
+                "matte_dry",
+                "matte_cream",
+                "matte_powder",
+                "matte_liquid",
+                "cream_shine",
+                "glossy_cream_plumping",
+                "balm",
+                "balm_light",
+                "glossy_cream_shimmer",
+                "cream_vividcolors",
+                "matte_velvet",
+                "cream_shine_glitter",
+                "matte_velvet_sparkling",
+                "matte_sheer_lightcolors",
+                "matte_cream_vividcolors",
+                "metallic_cream",
+                "matte_velvet_sparkling_lightcolors",
+                "matte_light",
+                "metallic_shine",
+                "metallic_dry_lightcolors",
+                "satin",
+                "shine",
+                "cream",
+                "clear",
+                "cream_darkcolors",
+                "clear_shimmer",
+                "metallic_sheer"
+            ],
+            "description": "Type of the finish surface."
+        },
+        "coverage": {
+            "type": ["string", "number"],
+            "enum": [
+                "low",
+                "mid",
+                "high"
+            ],
+            "description": "Coverage intensity."
+        }
+    }
+}

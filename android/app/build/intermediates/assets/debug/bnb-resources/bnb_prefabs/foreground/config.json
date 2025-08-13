@@ -1,0 +1,40 @@
+{
+    "apply_order": 220,
+    "assets": {
+        "images":{
+            "@foreground_texture": { "file_name": "/bnb_prefabs/foreground/null_image.png", "type": "texture" }
+        },
+        "materials": {
+            "shaders/foreground": {
+                "path": "/bnb_prefabs/foreground/foreground",
+                "samplers": [
+                    { "name": "tex_foreground", "image": "foreground_texture" }
+                ],
+                "state": { "blend": "alpha", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false }
+            }
+        }
+    },
+    "entities": {
+        "foreground_filter":{ 
+            "components": { 
+                "mesh_instance":{ 
+                    "mesh": "$builtin$meshes/fs_tri", 
+                    "materials": [ "shaders/foreground" ]
+                }
+            },
+            "layer": "foreground_filter"
+        }
+    },
+    "hierarchy": {
+        "root": [ "foreground_filter" ]
+    },
+    "render_list": {
+        "default": [
+            {
+                "layer": "foreground_filter",
+                "render_target": "base_rt"
+            }
+        ]
+    },
+    "script": "/bnb_prefabs/foreground/config.js"
+}

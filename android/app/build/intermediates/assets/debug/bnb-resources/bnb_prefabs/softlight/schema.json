@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "description": "Apply softlight on the face.",
+    "required": [
+        "strength"
+    ],
+    "properties": {
+        "filename": {
+            "type": "string",
+            "description": "Path to custom softlight texture."
+        },
+        "strength": {
+            "type": "number",
+            "maximum": 1,
+            "minimum": 0,
+            "description": "Softlight strength. Float number in the range [0.0, 1.0]."
+        }
+    }
+}

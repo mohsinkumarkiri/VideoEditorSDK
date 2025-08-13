@@ -1,0 +1,70 @@
+{
+    "apply_order": 100,
+    "depends": ["makeup_base"],
+    "assets": {
+        "materials": {
+            "shaders/foundation/blur_hsv": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/blur_hsv",
+                "samplers": 
+                [
+                    { "name": "tex_input", "image": "base_main_color" },
+                    { "name": "tex_mask",  "image": "skin_brows_lips_nn" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "defines": ["BNB_MAKEUP_FOUNDATION"]
+            },
+            "shaders/foundation/tone": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/tone",
+                "samplers": 
+                [
+                    { "name": "tex_blur_hsv", "image": "blur_hsv" },
+                    { "name": "tex_mean",     "image": "mean0" },
+                    { "name": "tex_stddev",   "image": "stddev0" },
+                    { "name": "tex_mask",     "image": "skin_brows_lips_nn" }
+                ],
+                "state": { "blend": "alpha", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "parameters": 
+                {
+                    "foundation_abcd":     { "type": "vec4", "value": [1, 0, 1, 0] },
+                    "foundation_krp":      { "type": "vec4", "value": [0.5, 1, -1, 0] },
+                    "foundation_rgb_maxa": { "type": "vec4", "value": [0.6, 0.36, 0.21, 1] }
+                },
+                "defines": ["BNB_MAKEUP_FOUNDATION"]
+            }
+        }
+    },
+    "entities": {
+        "foundation_ent": { 
+            "components": { "mesh_instance" : {
+                "materials":[
+                    "shaders/foundation/blur_hsv",
+                    "shaders/mean",
+                    "shaders/stddev",
+                    "shaders/foundation/tone"
+                ],
+                "mesh": "/bnb_prefabs/makeup_foundation/meshes/foundation.bsm2"} }, 
+            "layers": [
+                "foundation_blur_hsv_layer",
+                "foundation_mean_layer",
+                "foundation_stddev_layer",
+                "foundation_tone_layer"
+            ]
+        }
+    },
+    "hierarchy": {
+        "root": [
+            "foundation_ent"
+        ]
+    },
+    "render_list": {
+        "default": [
+            { "layer": "foundation_blur_hsv_layer", "sub_geometries":["foundation/blur_hsv"], "render_target": "blur_hsv_rt" },
+            { "layer": "foundation_mean_layer",     "sub_geometries":["mean"], "render_target": "mean_rt" },
+            { "layer": "foundation_stddev_layer",   "sub_geometries":["stddev"], "render_target": "stddev_rt" },
+            { "layer": "foundation_tone_layer",     "sub_geometries":["foundation/tone"], "render_target": "base_rt" }
+        ]
+    },
+    "script": "/bnb_prefabs/makeup_foundation/scripts/index.js"
+}

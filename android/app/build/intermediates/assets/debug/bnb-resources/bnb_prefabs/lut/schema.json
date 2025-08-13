@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "description": "Apply color filter (aka LUT).",
+    "required": [
+        "filename"
+    ],
+    "properties": {
+        "filename": {
+            "type": "string",
+            "description": "Path to LUT file (usually PNG)."
+        },
+        "strength": {
+            "type": "number",
+            "maximum": 1,
+            "minimum": 0,
+            "description": "LUT strength. Value in [0, 1]."
+        }
+    }
+}

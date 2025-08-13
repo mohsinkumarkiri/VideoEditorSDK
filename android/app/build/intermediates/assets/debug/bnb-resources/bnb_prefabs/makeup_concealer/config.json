@@ -1,0 +1,70 @@
+{
+    "apply_order": 105,
+    "depends": ["makeup_base"],
+    "assets": {
+        "materials": {
+            "shaders/concealer/blur_hsv": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/blur_hsv",
+                "samplers": 
+                [
+                    { "name": "tex_input", "image": "base_main_color" },
+                    { "name": "tex_mask",  "image": "consiler_contour_highlighter_blush_tex_c" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "defines": ["BNB_MAKEUP_CONCEALER"]
+            },
+            "shaders/concealer/tone": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/tone",
+                "samplers": 
+                [
+                    { "name": "tex_blur_hsv", "image": "blur_hsv" },
+                    { "name": "tex_mean",     "image": "mean0" },
+                    { "name": "tex_stddev",   "image": "stddev0" },
+                    { "name": "tex_mask",     "image": "consiler_contour_highlighter_blush_tex_c" }
+                ],
+                "state": { "blend": "alpha", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "parameters": 
+                {
+                    "concealer_abcd":     { "type": "vec4", "value": [1, 0, 1, 0] },
+                    "concealer_krp":      { "type": "vec4", "value": [0.5, 0, 0, 0] },
+                    "concealer_rgb_maxa": { "type": "vec4", "value": [0.06, 0.024, 0.015, 0.64314] }
+                },
+                "defines": ["BNB_MAKEUP_CONCEALER"]
+            }
+        }
+    },
+    "entities": {
+        "concealer_ent": { 
+            "components": { "mesh_instance" : {
+                "materials":[
+                    "shaders/concealer/blur_hsv",
+                    "shaders/mean",
+                    "shaders/stddev",
+                    "shaders/concealer/tone"
+                ],
+            "mesh": "/bnb_prefabs/makeup_concealer/meshes/concealer.bsm2"} }, 
+            "layers": [
+                "concealer_blur_hsv_layer",
+                "concealer_mean_layer",
+                "concealer_stddev_layer",
+                "concealer_tone_layer"
+            ]
+        }
+    },
+    "hierarchy": {
+        "root": [
+            "concealer_ent"
+        ]
+    },
+    "render_list": {
+        "default": [
+            { "layer": "concealer_blur_hsv_layer", "sub_geometries":["concealer/blur_hsv"],"render_target": "blur_hsv_rt" },
+            { "layer": "concealer_mean_layer",     "sub_geometries":["mean"], "render_target": "mean_rt" },
+            { "layer": "concealer_stddev_layer",   "sub_geometries":["stddev"], "render_target": "stddev_rt" },
+            { "layer": "concealer_tone_layer",     "sub_geometries":["concealer/tone"],"render_target": "base_rt" }
+        ]
+    },
+    "script": "/bnb_prefabs/makeup_concealer/scripts/index.js"
+}

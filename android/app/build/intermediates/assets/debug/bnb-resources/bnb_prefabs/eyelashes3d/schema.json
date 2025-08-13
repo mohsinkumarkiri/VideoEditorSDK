@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "description": "Apply 3D eyelashes on the face.",
+    "required": [
+        "color"
+    ],
+    "properties": {
+        "color": {
+            "type": "string",
+            "default": "0 0 0 0",
+            "description": "Color of the 3D eyelashes."
+        },
+        "texture": {
+            "type": "string",
+            "description": "Path to custom eyelashes texture."
+        }
+    }
+}

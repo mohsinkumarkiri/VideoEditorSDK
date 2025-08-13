@@ -1,0 +1,4 @@
+{
+    "type": "object",
+    "description": "Render camera feed on the screen."
+}

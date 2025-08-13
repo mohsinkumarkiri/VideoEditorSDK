@@ -1,0 +1,57 @@
+{
+    "apply_order": 95,
+    "depends": ["makeup_base"],
+    "assets": {
+        "attachments": {
+            "mean_cc":     { "type": "color", "format": "rgba16f",   "clear": [ 0, 0, 0, 0 ], "load_state": "dont_care", "store_state": "save", "width": 256, "height": 256, "filtering": "linear", "generate_mipmaps": true },
+            "mean_hl":     { "type": "color", "format": "rgba16f",   "clear": [ 0, 0, 0, 0 ], "load_state": "dont_care", "store_state": "save", "width": 256, "height": 256, "filtering": "linear", "generate_mipmaps": true },
+            "mean_hl_rgb": { "type": "color", "format": "rgba16f",   "clear": [ 0, 0, 0, 0 ], "load_state": "dont_care", "store_state": "save", "width": 256, "height": 256, "filtering": "linear", "generate_mipmaps": true }
+        },
+        "materials": {
+            "shaders/eyebags/mean": 
+            {
+                "path": "/bnb_prefabs/makeup_eyebags/shaders/mean",
+                "samplers": 
+                [
+                    { "name": "tex_input", "image": "base_main_color" },
+                    { "name": "tex_mask", "image": "consiler_contour_highlighter_blush_tex_c" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false }
+            },
+            "shaders/eyebags/tone": 
+            {
+                "path": "/bnb_prefabs/makeup_eyebags/shaders/tone",
+                "samplers": 
+                [
+                    { "name": "tex_input", "image": "base_main_color" },
+                    { "name": "tex_mask", "image": "consiler_contour_highlighter_blush_tex_c" },
+                    { "name": "tex_mean_cc", "image": "mean_cc" },
+                    { "name": "tex_mean_hl", "image": "mean_hl" },
+                    { "name": "tex_mean_hl_rgb", "image": "mean_hl_rgb" }
+                ],
+                "state": { "blend": "alpha", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "parameters": 
+                {
+                    "eyebags_alpha": { "type": "vec4", "value": [0.8, 0, 0, 0] }
+                }
+            }
+        }
+    },
+    "entities": {
+        "eyebags_mean_ent": { "components": { "mesh_instance" : {"materials": ["shaders/eyebags/mean"], "mesh": "fs_tri"} }, "layer": "eyebags_mean_layer" },
+        "eyebags_tone_ent": { "components": { "mesh_instance" : {"materials": ["shaders/eyebags/tone"], "mesh": "fs_tri"} }, "layer": "eyebags_tone_layer" }
+    },
+    "hierarchy": {
+        "face_tracker:@face_idx": ["eyebags_mean_ent", "eyebags_tone_ent"]
+    },
+    "render_list": {
+        "default": [
+            { "layer": "eyebags_mean_layer", "render_target": "eyebags_mean_rt" },
+            { "layer": "eyebags_tone_layer", "render_target": "base_rt" }
+        ]
+    },
+    "render_targets": {
+        "eyebags_mean_rt": { "attachments": [ "mean_cc", "mean_hl", "mean_hl_rgb" ], "width": 256, "height": 256 }
+    },
+    "script": "/bnb_prefabs/makeup_eyebags/scripts/index.js"
+}

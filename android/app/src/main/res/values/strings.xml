@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ve-sdk-react-native-integration-sample</string>
+    <!-- AUDIO BROWSER MUBERT -->
+    <string name="mubert_api_key">SET Mubert API KEY</string>
+</resources>

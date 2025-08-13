@@ -1,0 +1,28 @@
+{
+    "apply_order": 10,
+    "assets": {
+        "attachments": {
+            "base_main_color": {
+                "clear": [0, 0, 0, 1],
+                "load_state": "load",
+                "store_state": "save",
+                "type": "color"
+            },
+            "base_main_z": {
+                "clear": [1],
+                "load_state": "clear",
+                "store_state": "discard",
+                "type": "depth"
+            }
+        }
+    },
+    "hierarchy": {
+        "root": []
+    },
+    "render_targets": {
+        "base_rt": [
+            "base_main_color",
+            "base_main_z"
+        ]
+    }
+}

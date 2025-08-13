@@ -1,0 +1,96 @@
+{
+  "apply_order": 170,
+  "assets": {
+    "attachments": {
+      "eyelashes_color": {
+        "type": "color"
+      }
+    },
+    "faces": {
+      "face:@face_idx": {
+        "index": @face_idx,
+        "mesh": "face_stream:@face_idx"
+      }
+    },
+    "images": {
+      "eyelashes": {
+        "file_name": "/bnb_prefabs/eyelashes/images/eyelashes_makeup.ktx",
+        "type": "texture"
+      }
+    },
+    "materials": {
+      "eyelashes/shaders/eyelahes": {
+        "path": "/bnb_prefabs/eyelashes/shaders/eyelahes",
+        "samplers": [
+          {
+            "name": "tex_lashes",
+            "image": "eyelashes"
+          }
+        ],
+        "state": {
+          "@blend": "alpha",
+          "backfaces": true,
+          "colorwrite": true,
+          "ztest": true,
+          "zwrite": true
+        },
+        "parameters": {
+          "@eyelashes_color": {
+            "type": "vec4",
+            "value": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    "meshes": {
+      "face_stream:@face_idx": "$builtin$meshes/face.stream:@face_idx"
+    }
+  },
+  "components": {
+    "face_tracker:@face_idx": {
+        "face": "face:@face_idx",
+        "type": "face_tracker"
+    }
+},
+  "entities": {
+    "eyelashes:@face_idx": {
+      "components": {
+          "mesh_instance": {
+              "materials": ["eyelashes/shaders/eyelahes"],
+              "mesh": "face_stream:@face_idx"
+          }
+      },
+      "layer": "eyelashes_layer:@face_idx"
+  },
+    "face_tracker:@face_idx": {
+      "components": ["face_tracker:@face_idx"]
+  }
+  },
+  "hierarchy": {
+    "face_tracker:@face_idx": [
+      "eyelashes:@face_idx"
+  ],
+    "root": [
+      "face_tracker:@face_idx"
+    ]
+  },
+  "render_list": {
+    "default": [
+      {
+        "layer": "eyelashes_layer:@face_idx",
+        "render_target": "base_rt"
+      }
+    ]
+  },
+  "render_targets": {
+    "text_rt": [
+      "eyelashes_color"
+    ]
+  },
+  "script": "/bnb_prefabs/eyelashes/scripts/index.js"
+}

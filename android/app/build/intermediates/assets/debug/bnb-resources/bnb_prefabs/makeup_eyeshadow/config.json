@@ -1,0 +1,174 @@
+{
+    "apply_order": 135,
+    "depends": ["makeup_base"],
+    "assets": {
+        "materials": {
+            "shaders/eyeshadow0/blur_hsv": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/blur_hsv",
+                "samplers": 
+                [
+                    { "name": "tex_input", "image": "base_main_color" },
+                    { "name": "tex_mask",  "image": "shadows_eyeliner_tex_c" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "defines": ["BNB_MAKEUP_EYESHADOW0"]
+            },
+            "shaders/eyeshadow0/tone": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/tone",
+                "samplers": 
+                [
+                    { "name": "tex_blur_hsv", "image": "blur_hsv" },
+                    { "name": "tex_mean",     "image": "mean0" },
+                    { "name": "tex_stddev",   "image": "stddev0" },
+                    { "name": "tex_mask",     "image": "shadows_eyeliner_tex_c" }
+                ],
+                "state": { "blend": "alpha", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "parameters": 
+                {
+                    "eyeshadow0_abcd":     { "type": "vec4", "value": [1, 0, 1, 0] },
+                    "eyeshadow0_krp":      { "type": "vec4", "value": [1, 1, -1, 0] },
+                    "eyeshadow0_rgb_maxa": { "type": "vec4", "value": [0.24, 0.05, 0.16, 0.8] }
+                },
+                "defines": ["BNB_MAKEUP_EYESHADOW0"]
+            },
+            "shaders/eyeshadow1/blur_hsv": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/blur_hsv",
+                "samplers": 
+                [
+                    { "name": "tex_input", "image": "base_main_color" },
+                    { "name": "tex_mask",  "image": "shadows_eyeliner_tex_c" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "defines": ["BNB_MAKEUP_EYESHADOW1"]
+            },
+            "shaders/eyeshadow1/tone": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/tone",
+                "samplers": 
+                [
+                    { "name": "tex_blur_hsv", "image": "blur_hsv" },
+                    { "name": "tex_mean",     "image": "mean0" },
+                    { "name": "tex_stddev",   "image": "stddev0" },
+                    { "name": "tex_mask",     "image": "shadows_eyeliner_tex_c" }
+                ],
+                "state": { "blend": "alpha", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "parameters": 
+                {
+                    "eyeshadow1_abcd":     { "type": "vec4", "value": [1, 0, 1, 0] },
+                    "eyeshadow1_krp":      { "type": "vec4", "value": [1, 1, -1, 0] },
+                    "eyeshadow1_rgb_maxa": { "type": "vec4", "value": [0.37, 0.26, 0.21, 1] }
+                },
+                "defines": ["BNB_MAKEUP_EYESHADOW1"]
+            },
+            "shaders/eyeshadow2/blur_hsv": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/blur_hsv",
+                "samplers": 
+                [
+                    { "name": "tex_input", "image": "base_main_color" },
+                    { "name": "tex_mask",  "image": "shadows_eyeliner_tex_c" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "defines": ["BNB_MAKEUP_EYESHADOW2"]
+            },
+            "shaders/eyeshadow2/tone": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/tone",
+                "samplers": 
+                [
+                    { "name": "tex_blur_hsv", "image": "blur_hsv" },
+                    { "name": "tex_mean",     "image": "mean0" },
+                    { "name": "tex_stddev",   "image": "stddev0" },
+                    { "name": "tex_mask",     "image": "shadows_eyeliner_tex_c" }
+                ],
+                "state": { "blend": "alpha", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "parameters": 
+                {
+                    "eyeshadow2_abcd":     { "type": "vec4", "value": [1, 0, 1, 0] },
+                    "eyeshadow2_krp":      { "type": "vec4", "value": [1, 1, -1, 0] },
+                    "eyeshadow2_rgb_maxa": { "type": "vec4", "value": [0.77, 0.78, 0.73, 0.7451] }
+                },
+                "defines": ["BNB_MAKEUP_EYESHADOW2"]
+            }
+        }
+    },
+    "entities": {
+        "eyeshadow0_ent": { 
+            "components": { "mesh_instance" : {
+                "materials":[
+                    "shaders/eyeshadow0/blur_hsv",
+                    "shaders/mean",
+                    "shaders/stddev",
+                    "shaders/eyeshadow0/tone"
+                ],
+                "mesh": "/bnb_prefabs/makeup_eyeshadow/meshes/eyeshadow0.bsm2"} }, 
+            "layers": [
+                "eyeshadow0_blur_hsv_layer",
+                "eyeshadow0_mean_layer",
+                "eyeshadow0_stddev_layer",
+                "eyeshadow0_tone_layer"
+            ]
+        },
+        "eyeshadow1_ent": { 
+            "components": { "mesh_instance" : {
+                "materials":[
+                    "shaders/eyeshadow1/blur_hsv",
+                    "shaders/mean",
+                    "shaders/stddev",
+                    "shaders/eyeshadow1/tone"
+                ],
+                "mesh": "/bnb_prefabs/makeup_eyeshadow/meshes/eyeshadow1.bsm2"} }, 
+            "layers": [
+                "eyeshadow1_blur_hsv_layer",
+                "eyeshadow1_mean_layer",
+                "eyeshadow1_stddev_layer",
+                "eyeshadow1_tone_layer"
+            ]
+        },
+        "eyeshadow2_ent": { 
+            "components": { "mesh_instance" : {
+                "materials":[
+                    "shaders/eyeshadow2/blur_hsv",
+                    "shaders/mean",
+                    "shaders/stddev",
+                    "shaders/eyeshadow2/tone"
+                ],
+                "mesh": "/bnb_prefabs/makeup_eyeshadow/meshes/eyeshadow2.bsm2"} }, 
+            "layers": [
+                "eyeshadow2_blur_hsv_layer",
+                "eyeshadow2_mean_layer",
+                "eyeshadow2_stddev_layer",
+                "eyeshadow2_tone_layer"
+            ]
+        }
+    },
+    "hierarchy": {
+        "root": [
+            "eyeshadow0_ent",
+            "eyeshadow1_ent",
+            "eyeshadow2_ent"
+        ]
+    },
+    "render_list": {
+        "default": [
+            { "layer": "eyeshadow0_blur_hsv_layer", "sub_geometries":["eyeshadow0/blur_hsv"],"render_target": "blur_hsv_rt" },
+            { "layer": "eyeshadow0_mean_layer",     "sub_geometries":["mean"], "render_target": "mean_rt" },
+            { "layer": "eyeshadow0_stddev_layer",   "sub_geometries":["stddev"], "render_target": "stddev_rt" },
+            { "layer": "eyeshadow0_tone_layer",     "sub_geometries":["eyeshadow0/tone"],"render_target": "base_rt" },
+
+            { "layer": "eyeshadow1_blur_hsv_layer", "sub_geometries":["eyeshadow1/blur_hsv"],"render_target": "blur_hsv_rt" },
+            { "layer": "eyeshadow1_mean_layer",     "sub_geometries":["mean"], "render_target": "mean_rt" },
+            { "layer": "eyeshadow1_stddev_layer",   "sub_geometries":["stddev"], "render_target": "stddev_rt" },
+            { "layer": "eyeshadow1_tone_layer",     "sub_geometries":["eyeshadow1/tone"],"render_target": "base_rt" },
+
+            { "layer": "eyeshadow2_blur_hsv_layer", "sub_geometries":["eyeshadow2/blur_hsv"],"render_target": "blur_hsv_rt" },
+            { "layer": "eyeshadow2_mean_layer",     "sub_geometries":["mean"], "render_target": "mean_rt" },
+            { "layer": "eyeshadow2_stddev_layer",   "sub_geometries":["stddev"], "render_target": "stddev_rt" },
+            { "layer": "eyeshadow2_tone_layer",     "sub_geometries":["eyeshadow2/tone"],"render_target": "base_rt" }
+        ]
+    },
+    "script": "/bnb_prefabs/makeup_eyeshadow/scripts/index.js"
+}

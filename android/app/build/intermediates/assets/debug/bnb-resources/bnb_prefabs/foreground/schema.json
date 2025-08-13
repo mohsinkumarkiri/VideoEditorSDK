@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "description": "Apply texture onto the whole screen.",
+    "required": [
+        "filename"
+    ],
+    "properties": {
+        "filename": {
+            "type": "string",
+            "description": "Path to a PNG texture file. It must have reasonable alpha channel or it will hide the underlying drawings."
+        },
+        "blending": {
+            "type": "string",
+            "enum": [
+                "off", 
+                "alpha", 
+                "premul_alpha", 
+                "alpha_rgba", 
+                "screen", 
+                "add", 
+                "multiply", 
+                "min", 
+                "max" 
+            ]
+        }
+    }
+}

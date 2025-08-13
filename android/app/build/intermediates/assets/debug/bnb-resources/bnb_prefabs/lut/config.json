@@ -1,0 +1,46 @@
+{
+    "apply_order": 210,
+    "depends": ["camera"],
+    "assets": {
+        "attachments": {
+            "lut_color": {"type": "color"}
+        },
+        "images":
+        {
+            "@lut_texture": { "file_name": "/bnb_prefabs/lut/textures/_null_lut_.png", "type": "lut"}
+        },
+        "materials": {
+            "shaders/lut/lut_filter": 
+            {
+                "path": "/bnb_prefabs/lut/shaders/lut-filter/lut_filter",
+                "samplers": 
+                [
+                    { "name": "tex_camera", "image": "base_main_color" },
+                    { "name": "tex_filter", "image": "lut_texture" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "parameters": {
+                    "@lut_filter_strength": { "type": "vec4", "value": [0, 0, 0, 0] }
+                }
+            }
+        }
+    },
+    "entities": {
+        "lut_filter":{ "components": { "mesh_instance":{ "mesh": "$builtin$meshes/fs_tri", "materials": [ "shaders/lut/lut_filter" ]}},"layer": "lut_filter"}
+    },
+    "hierarchy": {
+        "root": [
+            "lut_filter"
+        ]
+    },
+    "render_list": {
+        "default": [
+            { "layer": "lut_filter", "render_target": "lut_color", "blit" : "base_rt" }
+        ]
+    },
+    "render_targets": 
+    {
+        "lut_color": { "attachments": [ "lut_color" ]}
+    },
+    "script": "/bnb_prefabs/lut/scripts/index.js"
+}

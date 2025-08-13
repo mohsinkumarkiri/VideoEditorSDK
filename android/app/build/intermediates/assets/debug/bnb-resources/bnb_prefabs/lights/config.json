@@ -1,0 +1,13 @@
+{
+    "apply_order": 195,
+    "global_params": [ 
+        "bnb_light_rad0", 
+        "bnb_light_dir0",
+        "bnb_light_rad1", 
+        "bnb_light_dir1",
+        "bnb_light_rad2", 
+        "bnb_light_dir2",
+        "bnb_light_rad3", 
+        "bnb_light_dir3" ],
+    "script": "/bnb_prefabs/lights/config.js"
+}

@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "description": "Add lights to GLTF models.",
+    "properties": {
+        "radiance": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "default": "0 0 0 0"
+            },
+            "minItems": 1,
+            "maxItems": 4,
+            "description": "Array (or a single value) of light sources radiances in _R_, _G_, _B_ components and light wrap around factor in 4th component."
+        },
+        "direction": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "default": "0 0 0"
+            },
+            "minItems": 1,
+            "maxItems": 4,
+            "description": "Array (or a single value) of light sources directions in _X_, _Y_, _Z_."
+        }
+    }
+}

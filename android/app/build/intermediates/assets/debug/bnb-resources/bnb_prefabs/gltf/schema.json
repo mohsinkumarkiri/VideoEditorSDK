@@ -1,0 +1,132 @@
+{
+    "type": "object",
+    "description": "Place 3D model in GLTF format on the face.",
+    "required": [
+        "@mesh"
+    ],
+    "properties": {
+        "@mesh": {
+            "type": "string",
+            "description": "Path to GLTF model."
+        },
+        "@use_physics": {
+            "type": "boolean",
+            "default": false,
+            "description": "Load GLTF with physics simulation."
+        },
+        "cut": {
+            "type": "string",
+            "default": "",
+            "description": "Enabling cutting geometry. Available values: 'head', 'head_with_ears'."
+        },
+        "translation": {
+            "type": "string",
+            "default": "0 0 0",
+            "description": "Translate the model along _X_, _Y_, _Z_ axes (in millimetres)."
+        },
+        "scale": {
+            "type": "string",
+            "default": "1 1 1",
+            "description": "Scale along _X_, _Y_, _Z_ axes."
+        },
+        "rotation": {
+            "type": "string",
+            "default": "0 0 0",
+            "description": "Rotation angles (in radians) over _X_, _Y_, _Z_ axes."
+        },
+        "gravity": {
+            "type": "string",
+            "default": "0 0 0",
+            "description": "Sets gravitation vector along _X_, _Y_, _Z_ axes"
+        },
+        "bones": {
+            "type": "object",
+            "description": "Sets bones inversed mass. Object, where key is a name of bone and parameter is an inversed mass"
+        },
+        "colliders": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "center": {
+                        "type": "string",
+                        "default": "0. 0. 0.",
+                        "description": "_X_, _Y_, _Z_ coordinates of the center of sphere"
+                    },
+                    "radius": {
+                        "type": "number",
+                        "default": 0,
+                        "description": "Radius of the sphere"
+                    }
+                }
+            },
+            "description": "Add sphere colliders for physical bones. Array of objects, each object is a separate collider",
+            "required": [
+                "center",
+                "radius"
+            ]
+        },
+        "constraints": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "from": {
+                        "type": "string",
+                        "default": "",
+                        "description": "'From' bone name"
+                    },
+                    "to": {
+                        "type": "string",
+                        "default": "",
+                        "description": "'To' bone name"
+                    },
+                    "distance": {
+                        "type": "number",
+                        "default": 0,
+                        "description": "Constaint length"
+                    }
+                }
+            },
+            "description": "Add constraint between two bones. Array of objects, each object is a one constraint",
+            "required": [
+                "from",
+                "to",
+                "distance"
+            ]
+        },
+        "bones_in_mv_space": {
+            "type": "boolean",
+            "default": false,
+            "description": "Sets bones in MV space"
+        },
+        "animation": {
+            "type": "object",
+            "description": "Play animation from GLTF file",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Animation to play from GLTF file."
+                },
+                "mode": {
+                    "type": "string",
+                    "enum": [
+                        "off",
+                        "loop",
+                        "once",
+                        "once_reversed",
+                        "fixed"
+                    ],
+                    "dafault": "loop",
+                    "description": "How to play animation selected by 'name'"
+                },
+                "seek_position": {
+                    "type": "integer",
+                    "default": 0,
+                    "description": "Where to start animation relatively from the start position (in ms)"
+                }
+            }
+        }
+    }
+}

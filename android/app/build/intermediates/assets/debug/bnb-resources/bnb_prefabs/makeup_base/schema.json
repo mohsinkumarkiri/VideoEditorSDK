@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "description": "Base makeup.",
+    "properties": {
+        "mode": {
+            "type": "string",
+            "default": "speed",
+            "description": "Can be 'speed' or 'quality' (to use heavy algorithms)."
+        },
+        "smooth": {
+            "type": "string",
+            "default": "0 1",
+            "description": "Smooths face skin. Contains 2 values of the smoothing strength for corresponding regions: 'whole face' and 'under eyes'."
+        },
+        "smokey": {
+            "type": "integer",
+            "default": 0,
+            "description": "Smokey eyes index. 0 disables smokey eyes; 1, 2, 3 or 4 selects different set of smokey eyes textures for the first two eyeshadow layers."
+        }
+    }
+}

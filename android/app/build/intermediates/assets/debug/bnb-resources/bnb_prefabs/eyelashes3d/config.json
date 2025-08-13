@@ -1,0 +1,111 @@
+{
+  "apply_order": 160,
+  "depends": ["camera"],
+  "assets": {
+    "attachments": {
+      "eyelashes3d_color": {
+        "type": "color"
+      }
+    },
+    "faces": {
+      "face:@face_idx": {
+        "index": @face_idx,
+        "mesh": "face_stream:@face_idx"
+      }
+    },
+    "images": {
+      "@eyelashes": {
+        "file_name": "/bnb_prefabs/eyelashes3d/images/eyelashes.ktx",
+        "type": "texture"
+      }
+    },
+    "materials": {
+      "eyelashes3d/shaders/eyelashes": {
+        "path": "/bnb_prefabs/eyelashes3d/shaders/eyelashes",
+        "samplers": [
+          {
+            "name": "tex_diffuse",
+            "image": "eyelashes"
+          },
+          {
+            "name": "bnb_BONES"
+          },
+          {
+            "name": "bnb_MORPH"
+          }
+
+        ],
+        "state": {
+          "@blend": "alpha",
+          "backfaces": true,
+          "colorwrite": true,
+          "ztest": false,
+          "zwrite": true
+        },
+        "parameters": {
+          "@eyelashes3d_color": {
+            "type": "vec4",
+            "value": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    "meshes": {
+      "eyelashes3d": "/bnb_prefabs/eyelashes3d/meshes/eyelashes.bsm2",
+      "face_stream:@face_idx": "$builtin$meshes/face.stream:@face_idx"
+    }
+  },
+  "components": {
+    "face_tracker:@face_idx": {
+        "face": "face:@face_idx",
+        "type": "face_tracker"
+    }
+},
+  "entities": {
+    "eyelashes3d_surface:@face_idx": {
+      "components": {
+        "mesh_instance": {
+          "mesh": "eyelashes3d",
+          "materials": [
+            "eyelashes3d/shaders/eyelashes"
+          ]
+        }
+      },
+      "layer": "eyelashes3d:@face_idx"
+    },
+    "face_tracker:@face_idx": {
+      "components": ["face_tracker:@face_idx"]
+  }
+  },
+  "hierarchy": {
+    "face_tracker:@face_idx": [
+      "eyelashes3d_surface:@face_idx"
+  ],
+    "root": [
+      "face_tracker:@face_idx"
+    ]
+  },
+  "render_list": {
+    "default": [
+      {
+        "layer": "camera_layer",
+        "render_target": "eyelashes3d_rt"
+    },
+      {
+        "layer": "eyelashes3d:@face_idx",
+        "render_target": "eyelashes3d_rt"
+      }
+    ]
+  },
+  "render_targets": {
+    "eyelashes3d_rt": [
+      "eyelashes3d_color"
+    ]
+  },
+  "script": "/bnb_prefabs/eyelashes3d/scripts/index.js"
+}

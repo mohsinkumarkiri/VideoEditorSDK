@@ -1,0 +1,65 @@
+{
+  "apply_order": 230,
+    "assets": {
+      "attachments": {
+        "text_color": { "type": "color"} 
+    },
+      "images": {
+        "text_texture:@sprite_idx": {
+          "type": "text_texture",
+          "@font": "/bnb_prefabs/hint/font/NotoSans-Regular.ttf",
+          "@width": 100,
+          "@height": 100,
+          "@text": ""
+        }
+      },
+  
+      "materials": {
+        "shaders/hint/text:@sprite_idx": {
+        "path": "/bnb_prefabs/hint/shaders/text",
+          "samplers": [
+            { "name": "s_text", "image": "text_texture:@sprite_idx"}
+          ],
+          "state": { "@blend": "alpha", "backfaces": false, "colorwrite": true, "ztest": false, "zwrite": false },
+          "parameters": {
+            "@text_color": { "type": "vec4", "value": [1, 1, 1, 1] }
+        }
+        }
+      },
+      "meshes": {
+        "quad_surface": "/bnb_prefabs/hint/meshes/quad.bsm2"
+      }
+    },
+  
+    "entities": {
+        "hint_surface:@sprite_idx": {
+            "components": { 
+              "mesh_instance":{"mesh": "quad_surface", "materials": [ "shaders/hint/text:@sprite_idx" ] },
+              "transformation_3d": {
+                "@rotation": [0.0, 0.0, 0.0],
+                "@scale": [1.0, 1.0, 1.0],
+                "@translation": [0.0, 0.0, 0.0]
+            }
+          }, 
+            "layer": "text"
+  
+        }
+    },
+  
+    "hierarchy": {
+      "root": [
+        "hint_surface:@sprite_idx"
+      ]
+    },
+  
+    "render_list": {
+      "default": [
+        { "layer": "text", "render_target": "base_rt"}
+      ]
+    },
+  
+    "render_targets": {
+        "text_rt": ["text_color"]
+    },
+    "script": "/bnb_prefabs/hint/scripts/index.js"
+  }

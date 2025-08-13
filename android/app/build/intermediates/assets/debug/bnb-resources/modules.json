@@ -1,0 +1,393 @@
+{
+    "modules": {
+        "sdk_core": {
+            "sources": {
+                "android": [
+                    "libs/effect_player/java",
+                    "libs/renderer_common/java",
+                    "libs/utils/java",
+                    "platform/android/banuba_effect_player/src/main/java",
+                    "platform/android/banuba_effect_player/src-gen/main/java"
+                ]
+            },
+           "resources": {
+                "all": []
+            }
+        },
+        "sdk_api": {
+            "dependencies": [
+                "sdk_core"
+            ],
+            "sources": {
+                "android": [
+                    "platform/android/banuba_sdk/src/main/java",
+                    "platform/android/banuba_sdk/src-gen/main/java"
+                ]
+            }
+        },
+        "effect_player": {
+            "resources": {
+                "all": [
+                    "bnb_shaders",
+                    "bnb_prefabs/camera",
+                    "bnb_prefabs/lut",
+                    "bnb_prefabs/foreground",
+                    "bnb_prefabs/hint",
+                    "bnb_prefabs/base",
+                    "bnb_prefabs/gltf",
+                    "bnb_prefabs/audio",
+                    "bnb_prefabs/lights",
+                    "watermark.png",
+                    "watermark_blurred.png",
+                    "modules.json"
+                ]
+            }
+        },
+        "scripting": {
+            "resources": {
+                "all": [
+                    "frx/frx.js",
+                    "bnb_js",
+                    "resources-versions.txt"
+                ]
+            }
+        },
+        "face_tracker": {
+            "dependencies": [
+                "sdk_core", "effect_player", "scripting"
+            ],
+            "resources": {
+                "all": [
+                    "MoMoFRX",
+                    "flow/face_detector_offline.tflite",
+                    "flow/face_detector_online.tflite",
+                    "flow/frx_prior.tflite",
+                    "flow/landmarks_224.tflite",
+                    "flow/landmarks_contour_filter.tflite",
+                    "flow/landmarks_lips_filter.tflite",
+                    "flow/landmarks_contour_prior.tflite",
+                    "flow/landmarks_lips_fast.tflite",
+                    "flow/landmarks_eyes.tflite",
+                    "flow/landmarks_ears.tflite",
+                    "bnb_prefabs/morphing",
+                    "bnb_prefabs/action_units",
+                    "bnb_prefabs/eyelashes",
+                    "bnb_prefabs/eyelashes3d",
+                    "bnb_prefabs/eyes_flare",
+                    "bnb_prefabs/eyes_whitening",
+                    "bnb_prefabs/teeth_whitening",
+                    "bnb_prefabs/softlight"
+                ]
+            }
+        },
+        "lips": {
+            "dependencies": [
+                "sdk_core", "effect_player", "scripting", "face_tracker"
+            ],
+            "resources": {
+                "all": "flow/lips_segmentation.tflite"
+            }
+        },
+        "hair": {
+            "dependencies": [
+                "sdk_core", "effect_player", "scripting"
+            ],
+            "resources": {
+                "all": "bnb_prefabs/hair",
+                "ios": [
+                    "cml/coreMLHairLandscape.mlmodelc",
+                    "cml/coreMLHairPortrait.mlmodelc"
+                ],
+                "mac": [
+                    "cml/coreMLHairLandscape.mlmodelc",
+                    "cml/coreMLHairPortrait.mlmodelc"
+                ],
+                "webgl": [
+                    "flow/hair_lite_vert_heavy.tflite",
+                    "flow/hair_lite_horiz_heavy.tflite",
+                    "flow/hair_lite_vert.tflite",
+                    "flow/hair_lite_horiz.tflite"
+                ],
+                "android": [
+                    "flow/hair_vert.tflite",
+                    "flow/hair_horiz.tflite"
+                ],
+                "win": [
+                    "flow/hair_vert.tflite",
+                    "flow/hair_horiz.tflite"
+                ]
+            }
+        },
+        "hands": {
+            "dependencies": [
+                "sdk_core", "effect_player", "scripting"
+            ],
+            "resources": {
+                "all": [
+                    "flow/palm_detection.tflite",
+                    "flow/hand_landmark.tflite",
+                    "flow/hand_gestures.tflite",
+                    "flow/fingers/i_closer1.tflite",
+                    "flow/fingers/i_closer2.tflite",
+                    "flow/fingers/s_closer1.tflite",
+                    "flow/fingers/s_closer2.tflite", 
+                    "flow/fingers/m_closer1.tflite",
+                    "flow/fingers/m_closer2.tflite",
+                    "flow/fingers/r_closer1.tflite",
+                    "flow/fingers/r_closer2.tflite",
+                    "flow/nails.tflite",
+                    
+                    "bnb_prefabs/nails"
+                ],
+                "ios": "cml/coreMLNails.mlmodelc",
+                "mac": "cml/coreMLNails.mlmodelc"
+            }
+        },
+        "watch": {
+            "dependencies": [
+                "sdk_core", "effect_player", "scripting"
+            ],
+            "resources": {
+                "all": [
+                    "flow/watch/wrist_st1_mv2_a050_clean.h5.tflite",
+                    "flow/watch/wrist_st2_256p_v2_norm.h5.tflite",
+                    "flow/watch/wrist_st4_a050.h5.tflite"
+                ]
+            }
+        },
+        "occlusion": {
+            "dependencies": [
+                "sdk_core", "effect_player", "scripting", "face_tracker"
+            ],
+            "resources": {
+                "ios": "cml/coreMLOcclusion.mlmodelc",
+                "mac": "cml/coreMLOcclusion.mlmodelc"
+            }
+        },
+        "eyes": {
+            "dependencies": [
+                "sdk_core", "effect_player", "scripting", "face_tracker"
+            ],
+            "resources": {
+                "all": [
+                    "bnb_prefabs/eyes", 
+                    "bnb_prefabs/eyes_nn", 
+                    "bnb_prefabs/eye_lenses"
+                ],
+                "ios": "cml/coreMLEyes_v3.mlmodelc",
+                "mac": "cml/coreMLEyes_v3.mlmodelc",
+                "webgl": "flow/eyes_segmentation.tflite",
+                "android": "flow/eyes_segmentation.tflite",
+                "win": "flow/eyes_segmentation.tflite"
+            }
+        },
+        "skin": {
+            "dependencies": [
+                "sdk_core", "effect_player", "scripting"
+            ],
+            "resources": {
+                "ios": [
+                    "flow/skin_segm_horiz.tflite",
+                    "flow/skin_segm_vert.tflite",
+                    "flow/face_skin_segm.tflite",
+                    "cml/coreMLFace.mlmodelc"
+                ],
+                "mac": [
+                    "flow/skin_segm_horiz.tflite",
+                    "flow/skin_segm_vert.tflite",
+                    "flow/face_skin_segm.tflite",
+                    "cml/coreMLFace.mlmodelc"
+                ],
+                "webgl": [
+                    "flow/skin_segm_horiz.tflite",
+                    "flow/skin_segm_vert.tflite",
+                    "flow/face_skin_segm.tflite",
+                    "flow/face_segm.tflite"
+                ],
+                "android": [
+                    "flow/skin_segm_horiz.tflite",
+                    "flow/skin_segm_vert.tflite",
+                    "flow/face_skin_segm.tflite",
+                    "flow/face_segm.tflite"
+                ],
+                "win": [
+                    "flow/skin_segm_horiz.tflite",
+                    "flow/skin_segm_vert.tflite",
+                    "flow/face_skin_segm.tflite",
+                    "flow/face_segm.tflite"
+                ]
+            }
+        },
+        "background": {
+            "dependencies": [
+                "sdk_core", "effect_player", "scripting"
+            ],
+            "resources": {
+                "all": "bnb_prefabs/background",
+                "ios": [
+                    "cml/coreMLBGPortraitLow.mlmodelc",
+                    "cml/coreMLBGLandscapeLow.mlmodelc"
+                ],
+                "mac": [
+                    "cml/coreMLBGPortraitLow.mlmodelc",
+                    "cml/coreMLBGLandscapeLow.mlmodelc"
+                ],
+                "webgl": [
+                    "flow/bg_landscape_lite.tflite",
+                    "flow/bg_lite_vert.tflite"
+                ],
+                "android": [
+                    "flow/bg_vert.tflite",
+                    "flow/bg_landscape.tflite"
+                ],
+                "win": [
+                    "flow/bg_landscape_lite.tflite",
+                    "flow/bg_lite_vert.tflite"
+                ]
+            }
+        },
+        "body": {
+            "dependencies": [
+                "sdk_core", "effect_player", "scripting"
+            ],
+            "resources": {
+                "all": "flow/body_segm.tflite"
+            }
+        },
+        "acne_eyebags_removal": {
+            "dependencies": [
+                "sdk_core", "effect_player", "scripting", "face_tracker"
+            ],
+            "resources": {
+                "ios": [
+                    "cml/coreMLPaint.mlmodelc",
+                    "cml/acne.mlmodelc",
+                    "cml/bags.mlmodelc"
+                ],
+                "mac": [
+                    "cml/coreMLPaint.mlmodelc",
+                    "cml/acne.mlmodelc",
+                    "cml/bags.mlmodelc"
+                ],
+                "webgl": [
+                    "flow/acne.tflite",
+                    "flow/paint.tflite"
+                ],
+                "android": [
+                    "flow/acne.tflite",
+                    "flow/paint.tflite"
+                ],
+                "win": [
+                    "flow/acne.tflite",
+                    "flow/paint.tflite"
+                ]
+            }
+        },
+        "pose_estimation": {
+            "dependencies": [
+                "sdk_core", "effect_player", "scripting"
+            ],
+            "resources": {
+                "all": [
+                    "flow/pose_estimation.tflite",
+                    "flow/body_box.tflite"
+                ]
+            }
+        },
+        "makeup": {
+            "dependencies": [
+                "sdk_core", "effect_player", "scripting", "face_tracker", "skin", "lips"
+            ],
+            "resources": {
+                "all": [
+                    "bnb_prefabs/makeup_base",
+                    "bnb_prefabs/makeup_lipsliner",
+                    "bnb_prefabs/makeup_lipstick",
+                    "bnb_prefabs/makeup_lipsshine",
+                    "bnb_prefabs/makeup_blush",
+                    "bnb_prefabs/makeup_concealer",
+                    "bnb_prefabs/makeup_contour",
+                    "bnb_prefabs/makeup_eyebrows",
+                    "bnb_prefabs/makeup_eyeliner",
+                    "bnb_prefabs/makeup_foundation",
+                    "bnb_prefabs/makeup_highlighter",
+                    "bnb_prefabs/makeup_eyebags",
+                    "bnb_prefabs/makeup_eyeshadow",
+                    "bnb_prefabs/makeup_eyelashes"
+                ]
+            }
+        },
+        "face_match": {
+            "dependencies": [
+                "sdk_core", "face_tracker"
+            ],
+            "resources": {
+                "all": [
+                    "flow/face_match.tflite"
+                ]
+            }
+        },
+        "face_attributes": {
+            "dependencies": [
+                "sdk_core", "face_tracker", "skin", "hair", "eyes"
+            ],
+            "resources": {
+                "all": [
+                    "flow/gender.tflite",
+                    "flow/beard.tflite",
+                    "flow/earrings.tflite",
+                    "flow/hairstyle_men.tflite",
+                    "flow/hairstyle_women.tflite",
+                    "flow/eyewear.tflite",
+                    "flow/landmarks_nose.tflite",
+                    "flow/face_shape.tflite",
+                    "flow/brows_segm.tflite"
+                ]
+            }
+        },
+        "health": {
+            "dependencies": [
+                "sdk_core", "effect_player", "scripting", "lips"
+            ],
+            "resources": {
+                "all": [
+                    "effects/test_TeethTone"
+                ]
+            }
+        },
+        "neck": {
+            "dependencies": [
+                "sdk_core", "effect_player", "scripting"
+            ],
+            "resources": {
+                "all": "flow/neck_segmentation.tflite"
+            }
+        },
+        "banuba_sdk": {
+            "name": {
+                "ios": "BanubaSdk",
+                "mac": "BanubaSdk"
+            },
+            "dependencies": [
+                "sdk_core",
+                "sdk_api",
+                "effect_player",
+                "scripting",
+                "face_tracker",
+                "lips",
+                "hair",
+                "hands",
+                "eyes",
+                "skin",
+                "background",
+                "body",
+                "acne_eyebags_removal",
+                "makeup",
+                "face_attributes"
+            ],
+            "resources": {
+                "all": []
+            }
+        }
+    }
+}

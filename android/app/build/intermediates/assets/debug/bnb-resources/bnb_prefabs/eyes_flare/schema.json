@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "description": "Apply flare on the eyes.",
+    "required": [
+        "strength"
+    ],
+    "properties": {
+        "strength": {
+            "type": "number",
+            "maximum": 1,
+            "minimum": 0,
+            "description": "Flare brightness. Float number in the range [0.0, 1.0]."
+        }
+    }
+}

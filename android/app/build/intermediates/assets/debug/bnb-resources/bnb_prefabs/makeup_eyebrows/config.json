@@ -1,0 +1,70 @@
+{
+    "apply_order": 145,
+    "depends": ["makeup_base"],
+    "assets": {
+        "materials": {
+            "shaders/eyebrows/blur_hsv": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/blur_hsv",
+                "samplers": 
+                [
+                    { "name": "tex_input", "image": "base_main_color" },
+                    { "name": "tex_mask",  "image": "skin_brows_lips_nn" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "defines": ["BNB_MAKEUP_EYEBROWS"]
+            },
+            "shaders/eyebrows/tone": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/tone",
+                "samplers": 
+                [
+                    { "name": "tex_blur_hsv", "image": "blur_hsv" },
+                    { "name": "tex_mean",     "image": "mean0" },
+                    { "name": "tex_stddev",   "image": "stddev0" },
+                    { "name": "tex_mask",     "image": "skin_brows_lips_nn" }
+                ],
+                "state": { "blend": "alpha", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "parameters": 
+                {
+                    "eyebrows_abcd":     { "type": "vec4", "value": [2, 0, 1, 0] },
+                    "eyebrows_krp":      { "type": "vec4", "value": [0.2, 2, -1, 0] },
+                    "eyebrows_rgb_maxa": { "type": "vec4", "value": [0.005, 0.005, 0.005, 1] }
+                },
+                "defines": ["BNB_MAKEUP_EYEBROWS"]
+            }
+        }
+    },
+    "entities": {
+        "eyebrows_ent": { 
+            "components": { "mesh_instance" : {
+                "materials":[
+                    "shaders/eyebrows/blur_hsv",
+                    "shaders/mean",
+                    "shaders/stddev",
+                    "shaders/eyebrows/tone"
+                ],
+                "mesh": "/bnb_prefabs/makeup_eyebrows/meshes/eyebrows.bsm2"} }, 
+            "layers": [
+                "eyebrows_blur_hsv_layer",
+                "eyebrows_mean_layer",
+                "eyebrows_stddev_layer",
+                "eyebrows_tone_layer"
+            ]
+        }
+    },
+    "hierarchy": {
+        "root": [
+            "eyebrows_ent"
+        ]
+    },
+    "render_list": {
+        "default": [
+            { "layer": "eyebrows_blur_hsv_layer", "sub_geometries":["eyebrows/blur_hsv"], "render_target": "blur_hsv_rt" },
+            { "layer": "eyebrows_mean_layer",     "sub_geometries":["mean"], "render_target": "mean_rt" },
+            { "layer": "eyebrows_stddev_layer",   "sub_geometries":["stddev"], "render_target": "stddev_rt" },
+            { "layer": "eyebrows_tone_layer",     "sub_geometries":["eyebrows/tone"], "render_target": "base_rt" }
+        ]
+    },
+    "script": "/bnb_prefabs/makeup_eyebrows/scripts/index.js"
+}

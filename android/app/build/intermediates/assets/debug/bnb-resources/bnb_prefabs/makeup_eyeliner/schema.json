@@ -1,0 +1,40 @@
+{
+    "type": "object",
+    "description": "Apply eyeliner.",
+    "required": [
+        "color",
+        "finish",
+        "coverage"
+    ],
+    "properties": {
+        "color": {
+            "type": "string",
+            "default": "0 0 0",
+            "description": "Solid color of the region in RGB string format."
+        },
+        "finish": {
+            "type": "string",
+            "enum": [
+                "shimmer",
+                "cream",
+                "matte_liquid",
+                "matte_cream",
+                "matte_dark",
+                "metallic",
+                "shimmer",
+                "glitter",
+                "cream_lightcolors"
+            ],
+            "description": "Type of the finish surface."
+        },
+        "coverage": {
+            "type": ["string", "number"],
+            "enum": [
+                "low",
+                "mid",
+                "high"
+            ],
+            "description": "Coverage intensity."
+        }
+    }
+}

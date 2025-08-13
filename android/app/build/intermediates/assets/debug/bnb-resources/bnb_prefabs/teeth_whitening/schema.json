@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "description": "Apply whitening on the teeth.",
+    "required": [
+        "strength"
+    ],
+    "properties": {
+        "strength": {
+            "type": "number",
+            "maximum": 1,
+            "minimum": 0,
+            "description": "Teeth whitening. Float number in the range [0.0, 1.0]."
+        }
+    }
+}

@@ -1,0 +1,105 @@
+{
+    "apply_order": 190,
+    "assets": {
+        "faces": {
+            "face:@face_idx": {
+                "index": @face_idx,
+                "mesh" : "face_stream:@face_idx"
+            }
+        },
+        "materials":{
+            "mat_cut": {
+                "path": "/bnb_prefabs/gltf/shaders/mat_cut",
+                "built_in_samplers": [
+                    "bnb_BONES",
+                    "bnb_UVMORPH_FISHEYE",
+                    "bnb_MORPH"
+                ],
+                "samplers": [
+                    {
+                        "name": "bnb_BONES"
+                    },
+                    {
+                        "name": "bnb_UVMORPH_FISHEYE"
+                    },
+                    {
+                        "name": "bnb_MORPH"
+                    }
+                ],
+                "state": {
+                    "backfaces": false,
+                    "blend": "off",
+                    "colorwrite": false,
+                    "ztest": true,
+                    "zwrite": true
+                }
+            }
+        },
+        "meshes": {
+            "face_stream:@face_idx": "$builtin$meshes/face.stream:@face_idx",
+            "cut": "/bnb_prefabs/gltf/meshes/cut.bsm2"
+        }
+    },
+    "components": {
+        "face_tracker:@face_idx": {
+            "face": "face:@face_idx",
+            "type": "face_tracker"
+        }
+    },
+    "entities": {
+        "face_tracker:@face_idx": {
+            "components": ["face_tracker:@face_idx"]
+        },
+        "gltf:@face_idx": {
+            "components": {
+                "mesh_instance": {
+                    "@mesh": "",
+                    "@use_physics": false
+                },
+                "transformation_3d": {
+                    "@rotation": [0.0, 0.0, 0.0],
+                    "@scale": [1.0, 1.0, 1.0],
+                    "@translation": [0.0, 0.0, 0.0]
+                }
+            },
+            "layer": "gltf_layer:@face_idx"
+        },
+        "cut:@face_idx": {
+            "components": {
+                "mesh_instance": {
+                    "mesh": "cut",
+                    "use_physics": false,
+                    "materials": ["mat_cut"]
+                },
+                "transformation_3d": {
+                    "rotation": [-1.57, 0.0, 0.0],
+                    "scale": [1.0, 1.0, 1.0],
+                    "translation": [0.0, 0.0, 0.0]
+                }
+            },
+            "layer": "cut_layer:@face_idx"
+        }
+    },
+    "hierarchy": {
+        "face_tracker:@face_idx": [
+            "gltf:@face_idx",
+            "cut:@face_idx"
+        ],
+        "root": [
+            "face_tracker:@face_idx"
+        ]
+    },
+    "render_list": {
+        "default": [
+            {
+                "layer": "cut_layer:@face_idx",
+                "render_target": "base_rt"
+            },
+            {
+                "layer": "gltf_layer:@face_idx",
+                "render_target": "base_rt"
+            }
+        ]
+    },
+    "script": "/bnb_prefabs/gltf/config.js"
+}

@@ -1,0 +1,50 @@
+{
+    "apply_order": 50,
+    "depends": ["camera"],
+    "assets": {
+        "attachments": {
+            "teeth_camera_color": {"type": "color"}
+        },
+        "images":
+        {
+            "teeth_nn": { "active": true, "recognizer_feature_name": "teeth", "type": "segmentation_mask"},
+            "whitening_tex": { "file_name": "/bnb_prefabs/teeth_whitening/textures/lut3d_TEETH_medium.png", "type": "lut", "mips": true, "filter": "linear" }
+
+        },
+        "materials": {
+            "shaders/teeth/whitening": 
+            {
+                "path": "/bnb_prefabs/teeth_whitening/shaders/whitening",
+                "samplers": 
+                [
+                    { "name": "tex_camera", "image": "teeth_camera_color" },
+                    { "name": "tex_mask", "image": "teeth_nn" },
+                    { "name": "tex_whitening", "image": "whitening_tex" }
+                ],
+                "state": { "blend": "alpha", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "parameters": {
+                    "@whitening": { "type": "vec4", "value": [0, 0, 0, 0] }
+                }
+            }
+        }
+    },
+    "entities": {
+        "teeth_whitening":{ "components": { "mesh_instance":{ "mesh": "$builtin$meshes/quad", "materials": [ "shaders/teeth/whitening" ]}},"layer": "teeth_whitening"}
+    },
+    "hierarchy": {
+        "root": [
+            "teeth_whitening"
+        ]
+    },
+    "render_list": {
+        "default": [
+            { "layer": "camera_layer", "render_target": "teeth_camera_color" },
+            { "layer": "teeth_whitening", "render_target": "base_rt" }
+        ]
+    },
+    "render_targets": 
+    {
+        "teeth_camera_color": { "attachments": [ "teeth_camera_color" ]}
+    },
+    "script": "/bnb_prefabs/teeth_whitening/scripts/index.js"
+}

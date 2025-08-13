@@ -1,0 +1,70 @@
+{
+    "apply_order": 125,
+    "depends": ["makeup_base"],
+    "assets": {
+        "materials": {
+            "shaders/lipstick/blur_hsv": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/blur_hsv",
+                "samplers": 
+                [
+                    { "name": "tex_input", "image": "base_main_color" },
+                    { "name": "tex_mask",  "image": "skin_brows_lips_nn" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "defines": ["BNB_MAKEUP_LIPSTICK"]
+            },
+            "shaders/lipstick/tone": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/tone",
+                "samplers": 
+                [
+                    { "name": "tex_blur_hsv", "image": "blur_hsv" },
+                    { "name": "tex_mean",     "image": "mean0" },
+                    { "name": "tex_stddev",   "image": "stddev0" },
+                    { "name": "tex_mask",     "image": "skin_brows_lips_nn" }
+                ],
+                "state": { "blend": "alpha", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "parameters": 
+                {
+                    "lipstick_abcd":     { "type": "vec4", "value": [1.3, 0, 1.2, 0] },
+                    "lipstick_krp":      { "type": "vec4", "value": [0.5, 2, -1, 0] },
+                    "lipstick_rgb_maxa": { "type": "vec4", "value": [0.3, 0.09, 0.12, 1] }
+                },
+                "defines": ["BNB_MAKEUP_LIPSTICK"]
+            }
+        }
+    },
+    "entities": {
+        "lipstick_ent": { 
+            "components": { "mesh_instance" : {
+                "materials":[
+                    "shaders/lipstick/blur_hsv",
+                    "shaders/mean",
+                    "shaders/stddev",
+                    "shaders/lipstick/tone"
+                ],
+                "mesh": "/bnb_prefabs/makeup_lipstick/meshes/lipstick.bsm2"} }, 
+            "layers": [
+                "lipstick_blur_hsv_layer",
+                "lipstick_mean_layer",
+                "lipstick_stddev_layer",
+                "lipstick_tone_layer"
+            ]
+        }
+    },
+    "hierarchy": {
+        "root": [
+            "lipstick_ent"
+        ]
+    },
+    "render_list": {
+        "default": [
+            { "layer": "lipstick_blur_hsv_layer", "sub_geometries":["lipstick/blur_hsv"], "render_target": "blur_hsv_rt" },
+            { "layer": "lipstick_mean_layer",     "sub_geometries":["mean"], "render_target": "mean_rt" },
+            { "layer": "lipstick_stddev_layer",   "sub_geometries":["stddev"], "render_target": "stddev_rt" },
+            { "layer": "lipstick_tone_layer",     "sub_geometries":["lipstick/tone"], "render_target": "base_rt" }
+        ]
+    },
+    "script": "/bnb_prefabs/makeup_lipstick/scripts/index.js"
+}

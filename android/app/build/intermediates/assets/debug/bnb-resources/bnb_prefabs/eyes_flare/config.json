@@ -1,0 +1,70 @@
+{
+    "apply_order": 70,
+    "depends": ["camera"],
+    "assets": {
+        "attachments": {
+            "eyes_camera_color": {"type": "color"}
+        },
+        "faces": {
+            "face:@face_idx": {
+                    "index": @face_idx,
+                    "mesh" : "face_stream:@face_idx"
+            }
+        },
+        "images":
+        {
+            "eyes_flare": {
+                "file_name": "/bnb_prefabs/eyes_flare/images/FLARE_38_512.png",
+                "type": "texture"
+            }
+        },
+        "meshes": {
+            "face_stream:@face_idx": "$builtin$meshes/face.stream:@face_idx"
+        },
+        "materials": {
+            "eyes_flare/shaders/flare": 
+            {
+                "path": "/bnb_prefabs/eyes_flare/shaders/flare",
+                "samplers": 
+                [
+                    { "name": "tex_flare", "image": "eyes_flare" }
+                ],
+                "state": { "blend": "alpha", "backfaces": true, "colorwrite": true, "ztest": true, "zwrite": true },
+                "parameters": {
+                    "@strength": { "type": "vec4", "value": [0, 0, 0, 0] }
+                }
+            }
+        }
+    },
+    "components": {
+        "face_tracker:@face_idx": {
+            "face": "face:@face_idx",
+            "type": "face_tracker"
+        }
+    },
+    "entities": {
+        "eyes_flare:@face_idx":{ "components": { "mesh_instance":{ "mesh": "face_stream:@face_idx", "materials": [ "eyes_flare/shaders/flare" ]}},"layer": "eyes_flare:@face_idx"},
+        "face_tracker:@face_idx": {
+            "components": ["face_tracker:@face_idx"]
+        }
+    },
+    "hierarchy": {
+        "face_tracker:@face_idx": [
+            "eyes_flare:@face_idx"
+        ],
+        "root": [
+            "face_tracker:@face_idx"
+        ]
+    },
+    "render_list": {
+        "default": [
+            { "layer": "camera_layer", "render_target": "eyes_camera_color" },
+            { "layer": "eyes_flare:@face_idx", "render_target": "base_rt" }
+        ]
+    },
+    "render_targets": 
+    {
+        "eyes_camera_color": { "attachments": [ "eyes_camera_color" ]}
+    },
+    "script": "/bnb_prefabs/eyes_flare/scripts/index.js"
+}

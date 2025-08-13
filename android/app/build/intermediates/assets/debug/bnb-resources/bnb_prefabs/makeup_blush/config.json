@@ -1,0 +1,70 @@
+{
+    "apply_order": 120,
+    "depends": ["makeup_base"],
+    "assets": {
+        "materials": {
+            "shaders/blush/blur_hsv": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/blur_hsv",
+                "samplers": 
+                [
+                    { "name": "tex_input", "image": "base_main_color" },
+                    { "name": "tex_mask",  "image": "consiler_contour_highlighter_blush_tex_c" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "defines": ["BNB_MAKEUP_BLUSH"]
+            },
+            "shaders/blush/tone": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/tone",
+                "samplers": 
+                [
+                    { "name": "tex_blur_hsv", "image": "blur_hsv" },
+                    { "name": "tex_mean",     "image": "mean0" },
+                    { "name": "tex_stddev",   "image": "stddev0" },
+                    { "name": "tex_mask",     "image": "consiler_contour_highlighter_blush_tex_c" }
+                ],
+                "state": { "blend": "alpha", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "parameters": 
+                {
+                    "blush_abcd":     { "type": "vec4", "value": [1, 0, 1, 0] },
+                    "blush_krp":      { "type": "vec4", "value": [0.5, 1, -1, 0] },
+                    "blush_rgb_maxa": { "type": "vec4", "value": [0.29, 0.059, 0.059, 0.51373] }
+                },
+                "defines": ["BNB_MAKEUP_BLUSH"]
+            }
+        }
+    },
+    "entities": {
+        "blush_ent": { 
+            "components": { "mesh_instance" : {
+                "materials":[
+                    "shaders/blush/blur_hsv",
+                    "shaders/mean",
+                    "shaders/stddev",
+                    "shaders/blush/tone"
+                ],
+                "mesh": "/bnb_prefabs/makeup_blush/meshes/blush.bsm2"} }, 
+            "layers": [
+                "blush_blur_hsv_layer",
+                "blush_mean_layer",
+                "blush_stddev_layer",
+                "blush_tone_layer"
+            ]
+        }
+    },
+    "hierarchy": {
+        "root": [
+            "blush_ent"
+        ]
+    },
+    "render_list": {
+        "default": [
+            { "layer": "blush_blur_hsv_layer", "sub_geometries":["blush/blur_hsv"], "render_target": "blur_hsv_rt" },
+            { "layer": "blush_mean_layer",     "sub_geometries":["mean"], "render_target": "mean_rt" },
+            { "layer": "blush_stddev_layer",   "sub_geometries":["stddev"], "render_target": "stddev_rt" },
+            { "layer": "blush_tone_layer",     "sub_geometries":["blush/tone"], "render_target": "base_rt" }
+        ]
+    },
+    "script": "/bnb_prefabs/makeup_blush/scripts/index.js"
+}

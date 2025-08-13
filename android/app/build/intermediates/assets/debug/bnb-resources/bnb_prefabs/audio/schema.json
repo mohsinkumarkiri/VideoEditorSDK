@@ -1,0 +1,30 @@
+{
+    "type": "object",
+    "required": [
+        "filename"
+    ],
+    "properties": {
+        "filename": {
+            "type": "string",
+            "description": "Path to audio track. Tracks in '.ogg' and '.wav' format are supported."
+        },
+        "start": {
+            "type": "number",
+            "description": "Timepoint to start audio play (in seconds)."
+        },
+        "end": {
+            "type": "number",
+            "description": "Timepoint to end audio play (in seconds)."
+        },
+        "loop": {
+            "type": "boolean",
+            "description": "Loop the audio track."
+        },
+        "volume": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "This audio track volume. Value from '[0, 1]'."
+        }
+    }
+}

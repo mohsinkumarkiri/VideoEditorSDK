@@ -1,0 +1,341 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.vesdkreactnativecliintegrationsample"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:4:5-67
+11-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:4:22-64
+12    <!-- OPTIONAL PERMISSIONS, REMOVE WHATEVER YOU DO NOT NEED -->
+13    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+13-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:6:5-75
+13-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:6:22-72
+14    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+14-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:7:5-74
+14-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:7:22-71
+15    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+15-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:8:5-72
+15-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:8:22-69
+16    <uses-permission android:name="android.permission.VIBRATE" />
+16-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:9:5-66
+16-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:9:22-63
+17    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+17-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:10:5-80
+17-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:10:22-77
+18    <!-- These require runtime permissions on M -->
+19    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+19-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:12:5-81
+19-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:12:22-78
+20    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+20-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:13:5-79
+20-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:13:22-76
+21    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+21-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:14:5-85
+21-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:14:22-82
+22    <uses-permission android:name="android.permission.CAMERA" />
+22-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:15:5-65
+22-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:15:22-62
+23    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+23-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:16:5-71
+23-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:16:22-68
+24    <uses-permission android:name="android.permission.READ_CONTACTS" />
+24-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:17:5-72
+24-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:17:22-69
+25    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+25-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:18:5-73
+25-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:18:22-70
+26    <uses-permission android:name="android.permission.READ_CALENDAR" />
+26-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:19:5-72
+26-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:19:22-69
+27    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+27-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:20:5-73
+27-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:20:22-70
+28    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+28-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:21:5-80
+28-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:21:22-77
+29    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+29-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:22:5-81
+29-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:22:22-78
+30    <!--
+31    This manifest file is used only by Gradle to configure debug-only capabilities
+32    for React Native Apps.
+33    -->
+34    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+34-->[com.facebook.react:react-android:0.73.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\3cea37e08037a574b1f6197e2af11204\transformed\jetified-react-android-0.73.0-debug\AndroidManifest.xml:16:5-78
+34-->[com.facebook.react:react-android:0.73.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\3cea37e08037a574b1f6197e2af11204\transformed\jetified-react-android-0.73.0-debug\AndroidManifest.xml:16:22-75
+35    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+35-->[com.banuba.sdk:ve-flow-sdk:1.39.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\97218ef206b8996c1c6df8d37b230469\transformed\jetified-ve-flow-sdk-1.39.0\AndroidManifest.xml:7:5-80
+35-->[com.banuba.sdk:ve-flow-sdk:1.39.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\97218ef206b8996c1c6df8d37b230469\transformed\jetified-ve-flow-sdk-1.39.0\AndroidManifest.xml:7:22-77
+36    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+36-->[com.banuba.sdk:ve-flow-sdk:1.39.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\97218ef206b8996c1c6df8d37b230469\transformed\jetified-ve-flow-sdk-1.39.0\AndroidManifest.xml:11:5-77
+36-->[com.banuba.sdk:ve-flow-sdk:1.39.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\97218ef206b8996c1c6df8d37b230469\transformed\jetified-ve-flow-sdk-1.39.0\AndroidManifest.xml:11:22-74
+37    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+37-->[com.banuba.sdk:ve-flow-sdk:1.39.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\97218ef206b8996c1c6df8d37b230469\transformed\jetified-ve-flow-sdk-1.39.0\AndroidManifest.xml:12:5-77
+37-->[com.banuba.sdk:ve-flow-sdk:1.39.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\97218ef206b8996c1c6df8d37b230469\transformed\jetified-ve-flow-sdk-1.39.0\AndroidManifest.xml:12:22-74
+38    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+38-->[com.banuba.sdk:ar-cloud:1.39.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\e91cc7f3a696dae3278572a7c5d2aaff\transformed\jetified-ar-cloud-1.39.0\AndroidManifest.xml:7:5-79
+38-->[com.banuba.sdk:ar-cloud:1.39.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\e91cc7f3a696dae3278572a7c5d2aaff\transformed\jetified-ar-cloud-1.39.0\AndroidManifest.xml:7:22-76
+39    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+39-->[com.facebook.flipper:flipper:0.201.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\9ccdb96c0705b4d4f3fd9f9df274210e\transformed\jetified-flipper-0.201.0\AndroidManifest.xml:14:5-76
+39-->[com.facebook.flipper:flipper:0.201.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\9ccdb96c0705b4d4f3fd9f9df274210e\transformed\jetified-flipper-0.201.0\AndroidManifest.xml:14:22-73
+40    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+40-->[com.banuba.sdk:camera-ui-sdk:1.39.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\8e06ca53b935823014560f30ec10ac51\transformed\jetified-camera-ui-sdk-1.39.0\AndroidManifest.xml:8:5-75
+40-->[com.banuba.sdk:camera-ui-sdk:1.39.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\8e06ca53b935823014560f30ec10ac51\transformed\jetified-camera-ui-sdk-1.39.0\AndroidManifest.xml:8:22-72
+41    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+41-->[com.banuba.sdk:camera-ui-sdk:1.39.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\8e06ca53b935823014560f30ec10ac51\transformed\jetified-camera-ui-sdk-1.39.0\AndroidManifest.xml:9:5-76
+41-->[com.banuba.sdk:camera-ui-sdk:1.39.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\8e06ca53b935823014560f30ec10ac51\transformed\jetified-camera-ui-sdk-1.39.0\AndroidManifest.xml:9:22-73
+42    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+42-->[com.banuba.sdk:ve-audio-browser-sdk:1.39.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\6ded49c06a1fbfb4deedd5efdb7e4ef2\transformed\jetified-ve-audio-browser-sdk-1.39.0\AndroidManifest.xml:8:5-75
+42-->[com.banuba.sdk:ve-audio-browser-sdk:1.39.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\6ded49c06a1fbfb4deedd5efdb7e4ef2\transformed\jetified-ve-audio-browser-sdk-1.39.0\AndroidManifest.xml:8:22-72
+43
+44    <permission
+44-->[androidx.core:core:1.9.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\ebb6c3ca0b09d4c3ab1f4fae2583f37c\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+45        android:name="com.vesdkreactnativecliintegrationsample.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+45-->[androidx.core:core:1.9.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\ebb6c3ca0b09d4c3ab1f4fae2583f37c\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+46        android:protectionLevel="signature" />
+46-->[androidx.core:core:1.9.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\ebb6c3ca0b09d4c3ab1f4fae2583f37c\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+47
+48    <uses-permission android:name="com.vesdkreactnativecliintegrationsample.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- END OPTIONAL PERMISSIONS -->
+48-->[androidx.core:core:1.9.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\ebb6c3ca0b09d4c3ab1f4fae2583f37c\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+48-->[androidx.core:core:1.9.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\ebb6c3ca0b09d4c3ab1f4fae2583f37c\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+49    <application
+49-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:25:5-73:19
+50        android:name="com.vesdkreactnativecliintegrationsample.MainApplication"
+50-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:26:9-80
+51        android:allowBackup="false"
+51-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:27:9-36
+52        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+52-->[androidx.core:core:1.9.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\ebb6c3ca0b09d4c3ab1f4fae2583f37c\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+53        android:debuggable="true"
+54        android:extractNativeLibs="true"
+55        android:icon="@mipmap/ic_launcher"
+55-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:28:9-43
+56        android:label="@string/app_name"
+56-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:29:9-41
+57        android:largeHeap="true"
+57-->[com.banuba.sdk:ve-flow-sdk:1.39.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\97218ef206b8996c1c6df8d37b230469\transformed\jetified-ve-flow-sdk-1.39.0\AndroidManifest.xml:15:9-33
+58        android:requestLegacyExternalStorage="true"
+58-->[com.banuba.sdk:ve-audio-browser-sdk:1.39.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\6ded49c06a1fbfb4deedd5efdb7e4ef2\transformed\jetified-ve-audio-browser-sdk-1.39.0\AndroidManifest.xml:11:18-61
+59        android:roundIcon="@mipmap/ic_launcher_round"
+59-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:30:9-54
+60        android:supportsRtl="true"
+60-->[com.banuba.sdk:ve-flow-sdk:1.39.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\97218ef206b8996c1c6df8d37b230469\transformed\jetified-ve-flow-sdk-1.39.0\AndroidManifest.xml:16:9-35
+61        android:theme="@style/Theme.IntegrationApp"
+61-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:31:9-52
+62        android:usesCleartextTraffic="true" >
+62-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:32:9-44
+63        <activity
+63-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:33:9-45:20
+64            android:name="com.vesdkreactnativecliintegrationsample.MainActivity"
+64-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:34:13-81
+65            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+65-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:35:13-122
+66            android:exported="true"
+66-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:36:13-36
+67            android:label="@string/app_name"
+67-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:37:13-45
+68            android:launchMode="singleTask"
+68-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:38:13-44
+69            android:theme="@style/Theme.IntegrationApp"
+69-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:39:13-56
+70            android:windowSoftInputMode="adjustResize" >
+70-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:40:13-55
+71            <intent-filter>
+71-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:41:13-44:29
+72                <action android:name="android.intent.action.MAIN" />
+72-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:42:17-69
+72-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:42:25-66
+73
+74                <category android:name="android.intent.category.LAUNCHER" />
+74-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:43:17-77
+74-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:43:27-74
+75            </intent-filter>
+76        </activity>
+77        <activity
+77-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:47:9-53:45
+78            android:name="com.banuba.sdk.ve.flow.VideoCreationActivity"
+78-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:48:13-72
+79            android:exported="true"
+79-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:49:13-36
+80            android:resizeableActivity="false"
+80-->[com.banuba.sdk:ve-flow-sdk:1.39.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\97218ef206b8996c1c6df8d37b230469\transformed\jetified-ve-flow-sdk-1.39.0\AndroidManifest.xml:21:13-47
+81            android:screenOrientation="portrait"
+81-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:50:13-49
+82            android:theme="@style/CustomIntegrationAppTheme"
+82-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:51:13-61
+83            android:windowSoftInputMode="adjustResize" />
+83-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:52:13-55
+84
+85        <!-- DELETE this activity if you do not use custom audio browser. -->
+86        <activity android:name="com.vesdkreactnativecliintegrationsample.AudioBrowserActivity" />
+86-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:56:9-57:92
+86-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:57:13-89
+87
+88        <!--
+89       NOT REQUIRED FOR INTEGRATION
+90       Added for playing exported video file.
+91        -->
+92        <provider
+93            android:name="androidx.core.content.FileProvider"
+93-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:64:13-62
+94            android:authorities="com.vesdkreactnativecliintegrationsample.provider"
+94-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:65:13-60
+95            android:exported="false"
+95-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:66:13-37
+96            android:grantUriPermissions="true" >
+96-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:67:13-47
+97            <meta-data
+97-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:68:13-70:58
+98                android:name="android.support.FILE_PROVIDER_PATHS"
+98-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:69:17-67
+99                android:resource="@xml/provider_paths" />
+99-->C:\mohsin\webdev\VideoEditorSDK\android\app\src\main\AndroidManifest.xml:70:17-55
+100        </provider>
+101
+102        <activity
+102-->[com.facebook.react:react-android:0.73.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\3cea37e08037a574b1f6197e2af11204\transformed\jetified-react-android-0.73.0-debug\AndroidManifest.xml:19:9-21:40
+103            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+103-->[com.facebook.react:react-android:0.73.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\3cea37e08037a574b1f6197e2af11204\transformed\jetified-react-android-0.73.0-debug\AndroidManifest.xml:20:13-77
+104            android:exported="false" />
+104-->[com.facebook.react:react-android:0.73.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\3cea37e08037a574b1f6197e2af11204\transformed\jetified-react-android-0.73.0-debug\AndroidManifest.xml:21:13-37
+105
+106        <meta-data
+106-->[com.banuba.sdk:ve-ui-sdk:1.39.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\071403b54d62a59555fed33ecac4302b\transformed\jetified-ve-ui-sdk-1.39.0\AndroidManifest.xml:10:9-12:57
+107            android:name="preloaded_fonts"
+107-->[com.banuba.sdk:ve-ui-sdk:1.39.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\071403b54d62a59555fed33ecac4302b\transformed\jetified-ve-ui-sdk-1.39.0\AndroidManifest.xml:11:13-43
+108            android:resource="@array/preloaded_fonts" />
+108-->[com.banuba.sdk:ve-ui-sdk:1.39.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\071403b54d62a59555fed33ecac4302b\transformed\jetified-ve-ui-sdk-1.39.0\AndroidManifest.xml:12:13-54
+109
+110        <activity
+110-->[com.banuba.sdk:pe-sdk:1.2.9] C:\Users\Moshinumar\.gradle\caches\transforms-3\8bd10a4fed21ae7d9211a28d1f49137e\transformed\jetified-pe-sdk-1.2.9\AndroidManifest.xml:12:9-18:58
+111            android:name="com.banuba.sdk.pe.PhotoCreationActivity"
+111-->[com.banuba.sdk:pe-sdk:1.2.9] C:\Users\Moshinumar\.gradle\caches\transforms-3\8bd10a4fed21ae7d9211a28d1f49137e\transformed\jetified-pe-sdk-1.2.9\AndroidManifest.xml:13:13-67
+112            android:exported="false"
+112-->[com.banuba.sdk:pe-sdk:1.2.9] C:\Users\Moshinumar\.gradle\caches\transforms-3\8bd10a4fed21ae7d9211a28d1f49137e\transformed\jetified-pe-sdk-1.2.9\AndroidManifest.xml:14:13-37
+113            android:resizeableActivity="false"
+113-->[com.banuba.sdk:pe-sdk:1.2.9] C:\Users\Moshinumar\.gradle\caches\transforms-3\8bd10a4fed21ae7d9211a28d1f49137e\transformed\jetified-pe-sdk-1.2.9\AndroidManifest.xml:15:13-47
+114            android:screenOrientation="portrait"
+114-->[com.banuba.sdk:pe-sdk:1.2.9] C:\Users\Moshinumar\.gradle\caches\transforms-3\8bd10a4fed21ae7d9211a28d1f49137e\transformed\jetified-pe-sdk-1.2.9\AndroidManifest.xml:16:13-49
+115            android:theme="@style/PhotoCreationTheme"
+115-->[com.banuba.sdk:pe-sdk:1.2.9] C:\Users\Moshinumar\.gradle\caches\transforms-3\8bd10a4fed21ae7d9211a28d1f49137e\transformed\jetified-pe-sdk-1.2.9\AndroidManifest.xml:17:13-54
+116            android:windowSoftInputMode="adjustResize" />
+116-->[com.banuba.sdk:pe-sdk:1.2.9] C:\Users\Moshinumar\.gradle\caches\transforms-3\8bd10a4fed21ae7d9211a28d1f49137e\transformed\jetified-pe-sdk-1.2.9\AndroidManifest.xml:18:13-55
+117
+118        <uses-library
+118-->[com.banuba.sdk:banuba_sdk:1.16.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\6a649b5fcb5969c0af61cf527ce7b714\transformed\jetified-banuba_sdk-1.16.0\AndroidManifest.xml:8:9-10:40
+119            android:name="libOpenCL.so"
+119-->[com.banuba.sdk:banuba_sdk:1.16.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\6a649b5fcb5969c0af61cf527ce7b714\transformed\jetified-banuba_sdk-1.16.0\AndroidManifest.xml:9:13-40
+120            android:required="false" />
+120-->[com.banuba.sdk:banuba_sdk:1.16.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\6a649b5fcb5969c0af61cf527ce7b714\transformed\jetified-banuba_sdk-1.16.0\AndroidManifest.xml:10:13-37
+121        <uses-library
+121-->[com.banuba.sdk:banuba_sdk:1.16.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\6a649b5fcb5969c0af61cf527ce7b714\transformed\jetified-banuba_sdk-1.16.0\AndroidManifest.xml:11:9-13:40
+122            android:name="libOpenCL-pixel.so"
+122-->[com.banuba.sdk:banuba_sdk:1.16.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\6a649b5fcb5969c0af61cf527ce7b714\transformed\jetified-banuba_sdk-1.16.0\AndroidManifest.xml:12:13-46
+123            android:required="false" />
+123-->[com.banuba.sdk:banuba_sdk:1.16.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\6a649b5fcb5969c0af61cf527ce7b714\transformed\jetified-banuba_sdk-1.16.0\AndroidManifest.xml:13:13-37
+124
+125        <service
+125-->[androidx.camera:camera-camera2:1.1.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\e91de9a010a261ca1849a2c63f496c60\transformed\jetified-camera-camera2-1.1.0\AndroidManifest.xml:26:9-35:19
+126            android:name="androidx.camera.core.impl.MetadataHolderService"
+126-->[androidx.camera:camera-camera2:1.1.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\e91de9a010a261ca1849a2c63f496c60\transformed\jetified-camera-camera2-1.1.0\AndroidManifest.xml:27:13-75
+127            android:enabled="false"
+127-->[androidx.camera:camera-camera2:1.1.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\e91de9a010a261ca1849a2c63f496c60\transformed\jetified-camera-camera2-1.1.0\AndroidManifest.xml:28:13-36
+128            android:exported="false" >
+128-->[androidx.camera:camera-camera2:1.1.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\e91de9a010a261ca1849a2c63f496c60\transformed\jetified-camera-camera2-1.1.0\AndroidManifest.xml:29:13-37
+129            <meta-data
+129-->[androidx.camera:camera-camera2:1.1.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\e91de9a010a261ca1849a2c63f496c60\transformed\jetified-camera-camera2-1.1.0\AndroidManifest.xml:32:13-34:89
+130                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+130-->[androidx.camera:camera-camera2:1.1.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\e91de9a010a261ca1849a2c63f496c60\transformed\jetified-camera-camera2-1.1.0\AndroidManifest.xml:33:17-103
+131                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+131-->[androidx.camera:camera-camera2:1.1.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\e91de9a010a261ca1849a2c63f496c60\transformed\jetified-camera-camera2-1.1.0\AndroidManifest.xml:34:17-86
+132        </service>
+133
+134        <provider
+134-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\720cc50548fc7688ca56fff781af63f0\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+135            android:name="androidx.startup.InitializationProvider"
+135-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\720cc50548fc7688ca56fff781af63f0\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+136            android:authorities="com.vesdkreactnativecliintegrationsample.androidx-startup"
+136-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\720cc50548fc7688ca56fff781af63f0\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+137            android:exported="false" >
+137-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\720cc50548fc7688ca56fff781af63f0\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+138            <meta-data
+138-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\720cc50548fc7688ca56fff781af63f0\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+139                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+139-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\720cc50548fc7688ca56fff781af63f0\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+140                android:value="androidx.startup" />
+140-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\720cc50548fc7688ca56fff781af63f0\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+141            <meta-data
+141-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Moshinumar\.gradle\caches\transforms-3\6683436d9e56d6e437fd3c8e8ff344e1\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+142                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+142-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Moshinumar\.gradle\caches\transforms-3\6683436d9e56d6e437fd3c8e8ff344e1\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+143                android:value="androidx.startup" />
+143-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Moshinumar\.gradle\caches\transforms-3\6683436d9e56d6e437fd3c8e8ff344e1\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+144            <meta-data
+144-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\cff60065b592681eafbf25dd564cc45a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+145                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+145-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\cff60065b592681eafbf25dd564cc45a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+146                android:value="androidx.startup" />
+146-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\cff60065b592681eafbf25dd564cc45a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+147        </provider>
+148
+149        <service
+149-->[androidx.room:room-runtime:2.5.2] C:\Users\Moshinumar\.gradle\caches\transforms-3\2576453613fcd77bd6bf2df221fd4a0a\transformed\room-runtime-2.5.2\AndroidManifest.xml:24:9-28:63
+150            android:name="androidx.room.MultiInstanceInvalidationService"
+150-->[androidx.room:room-runtime:2.5.2] C:\Users\Moshinumar\.gradle\caches\transforms-3\2576453613fcd77bd6bf2df221fd4a0a\transformed\room-runtime-2.5.2\AndroidManifest.xml:25:13-74
+151            android:directBootAware="true"
+151-->[androidx.room:room-runtime:2.5.2] C:\Users\Moshinumar\.gradle\caches\transforms-3\2576453613fcd77bd6bf2df221fd4a0a\transformed\room-runtime-2.5.2\AndroidManifest.xml:26:13-43
+152            android:exported="false" />
+152-->[androidx.room:room-runtime:2.5.2] C:\Users\Moshinumar\.gradle\caches\transforms-3\2576453613fcd77bd6bf2df221fd4a0a\transformed\room-runtime-2.5.2\AndroidManifest.xml:27:13-37
+153
+154        <receiver
+154-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\cff60065b592681eafbf25dd564cc45a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+155            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+155-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\cff60065b592681eafbf25dd564cc45a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+156            android:directBootAware="false"
+156-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\cff60065b592681eafbf25dd564cc45a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+157            android:enabled="true"
+157-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\cff60065b592681eafbf25dd564cc45a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+158            android:exported="true"
+158-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\cff60065b592681eafbf25dd564cc45a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+159            android:permission="android.permission.DUMP" >
+159-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\cff60065b592681eafbf25dd564cc45a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+160            <intent-filter>
+160-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\cff60065b592681eafbf25dd564cc45a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+161                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+161-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\cff60065b592681eafbf25dd564cc45a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+161-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\cff60065b592681eafbf25dd564cc45a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+162            </intent-filter>
+163            <intent-filter>
+163-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\cff60065b592681eafbf25dd564cc45a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+164                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+164-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\cff60065b592681eafbf25dd564cc45a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+164-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\cff60065b592681eafbf25dd564cc45a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+165            </intent-filter>
+166            <intent-filter>
+166-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\cff60065b592681eafbf25dd564cc45a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+167                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+167-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\cff60065b592681eafbf25dd564cc45a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+167-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\cff60065b592681eafbf25dd564cc45a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+168            </intent-filter>
+169            <intent-filter>
+169-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\cff60065b592681eafbf25dd564cc45a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+170                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+170-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\cff60065b592681eafbf25dd564cc45a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+170-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Moshinumar\.gradle\caches\transforms-3\cff60065b592681eafbf25dd564cc45a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+171            </intent-filter>
+172        </receiver>
+173
+174        <meta-data
+174-->[com.facebook.soloader:soloader:0.10.5] C:\Users\Moshinumar\.gradle\caches\transforms-3\cb4813e50e015bb7ddf6a2d4fd111c1d\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:12:9-14:37
+175            android:name="com.facebook.soloader.enabled"
+175-->[com.facebook.soloader:soloader:0.10.5] C:\Users\Moshinumar\.gradle\caches\transforms-3\cb4813e50e015bb7ddf6a2d4fd111c1d\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:13:13-57
+176            android:value="false" />
+176-->[com.facebook.soloader:soloader:0.10.5] C:\Users\Moshinumar\.gradle\caches\transforms-3\cb4813e50e015bb7ddf6a2d4fd111c1d\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:14:13-34
+177    </application>
+178
+179</manifest>

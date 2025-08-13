@@ -1,0 +1,53 @@
+{
+    "apply_order": 150,
+    "depends": ["makeup_base"],
+    "assets": {
+        "images": {
+            "lips_shining_nn":  { "recognizer_feature_name": "lips_shining", "active": true, "type": "segmentation_mask" },
+            "glitter_tex": { "file_name": "/bnb_prefabs/makeup_lipsshine/textures/glitter.png", "type": "texture", "mips": true, "filter": "linear" }
+        },
+        "materials": {
+            "$builtin$materials/copy_pixels.lipsshine":
+            {
+                "samplers": 
+                [ 
+                    { "name": "tex_src", "image": "base_main_color" } 
+                ],
+                "state": { "backfaces": true, "blend": "off", "colorwrite": true, "ztest": false, "zwrite": false }
+            },
+            "shaders/lipsshine/shiny": 
+            {
+                "path": "/bnb_prefabs/makeup_lipsshine/shaders/shiny",
+                "samplers": 
+                [
+                    { "name": "tex_camera", "image": "blur_hsv" },
+                    { "name": "tex_lips_mask", "image": "lips_nn" },
+                    { "name": "tex_shine_mask", "image": "lips_shining_nn" },
+                    { "name": "tex_noise", "image": "glitter_tex" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "parameters": 
+                {
+                    "var_lips_color":                            { "type": "vec4", "value": [0, 0, 0, 0] },
+                    "var_lips_saturation_brightness":            { "type": "vec4", "value": [0, 0, 0, 0] },
+                    "var_lips_shine_intensity_bleeding_scale":   { "type": "vec4", "value": [0, 0, 0, 0] },
+                    "var_lips_glitter_bleeding_intensity_grain": { "type": "vec4", "value": [0, 0, 0, 0] }
+                }
+            }
+        }
+    },
+    "entities": {
+        "lips_shine_tone_copy_ent": { "components": { "mesh_instance" : { "materials": ["$builtin$materials/copy_pixels.lipsshine"], "mesh": "fs_tri" } }, "layer": "lipsshine_tone_copy_layer" },
+        "lips_shine_ent": { "components": { "mesh_instance" : {"materials": ["shaders/lipsshine/shiny"], "mesh": "$builtin$meshes/quad"} }, "layer": "lipsshine_layer" }
+    },
+    "hierarchy": {
+        "face_tracker:@face_idx": ["lips_shine_ent", "lips_shine_tone_copy_ent"]
+    },
+    "render_list": {
+        "default": [
+            { "layer": "lipsshine_tone_copy_layer", "render_target": "blur_hsv_rt" },
+            { "layer": "lipsshine_layer", "render_target": "base_rt" }
+        ]
+    },
+    "script": "/bnb_prefabs/makeup_lipsshine/scripts/index.js"
+}

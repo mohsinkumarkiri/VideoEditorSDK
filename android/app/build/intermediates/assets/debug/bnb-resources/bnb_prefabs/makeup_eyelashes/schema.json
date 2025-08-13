@@ -1,0 +1,36 @@
+{
+    "type": "object",
+    "description": "Apply eyelashes.",
+    "required": [
+        "color",
+        "finish",
+        "coverage"
+    ],
+    "properties": {
+        "color": {
+            "type": "string",
+            "default": "0 0 0",
+            "description": "Solid color of the region in RGB string format."
+        },
+        "finish": {
+            "type": "string",
+            "enum": [
+                "volume",
+                "lengthening",
+                "lengthandvolume",
+                "natural",
+                "natural_bottom"
+            ],
+            "description": "Type of the finish surface."
+        },
+        "coverage": {
+            "type": ["string", "number"],
+            "enum": [
+                "low",
+                "mid",
+                "high"
+            ],
+            "description": "Coverage intensity."
+        }
+    }
+}

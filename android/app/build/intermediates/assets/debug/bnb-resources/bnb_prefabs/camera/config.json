@@ -1,0 +1,64 @@
+{
+    "apply_order": 30,
+
+    "assets": {
+        "images": {
+            "camera": {
+                "algorithm": "camera_composer",
+                "type": "procedural_texture"
+            },
+            "@ibl_diff.ktx": {
+                "file_name": "/bnb_prefabs/camera/images/ibl_diff.ktx",
+                "type": "texture"
+            },
+            "@ibl_spec.ktx": {
+                "file_name": "/bnb_prefabs/camera/images/ibl_spec.ktx",
+                "type": "texture"
+            }
+        },
+        "materials": {
+            "$builtin$materials/copy_pixels.0": {
+                "parameters": {},
+                "samplers": [
+                    {
+                        "image": "camera",
+                        "name": "tex_src"
+                    }
+                ],
+                "state": {
+                    "backfaces": true,
+                    "blend": "off",
+                    "colorwrite": true,
+                    "ztest": false,
+                    "zwrite": false
+                }
+            }
+        }
+    },
+    "entities": {
+        "camera_copy": {
+            "components": {
+                "mesh_instance": {
+                    "materials": [
+                        "$builtin$materials/copy_pixels.0"
+                    ],
+                    "mesh": "$builtin$meshes/fs_tri"
+                }
+            },
+            "layer": "camera_layer"
+        }
+    },
+    "hierarchy": {
+        "root": [
+            "camera_copy"
+        ]
+    },
+    "render_list": {
+        "default": [
+            {
+                "layer": "camera_layer",
+                "render_target": "base_rt"
+            }
+        ]
+    }
+}

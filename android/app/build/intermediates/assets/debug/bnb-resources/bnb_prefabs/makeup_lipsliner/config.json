@@ -1,0 +1,70 @@
+{
+    "apply_order": 130,
+    "depends": ["makeup_base"],
+    "assets": {
+        "materials": {
+            "shaders/lipsliner/blur_hsv": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/blur_hsv",
+                "samplers": 
+                [
+                    { "name": "tex_input", "image": "base_main_color" },
+                    { "name": "tex_mask",  "image": "skin_brows_lips_nn" }
+                ],
+                "state": { "blend": "off", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "defines": ["BNB_MAKEUP_LIPSLINER"]
+            },
+            "shaders/lipsliner/tone": 
+            {
+                "path": "/bnb_prefabs/makeup_base/shaders/tone",
+                "samplers": 
+                [
+                    { "name": "tex_blur_hsv", "image": "blur_hsv" },
+                    { "name": "tex_mean",     "image": "mean0" },
+                    { "name": "tex_stddev",   "image": "stddev0" },
+                    { "name": "tex_mask",     "image": "skin_brows_lips_nn" }
+                ],
+                "state": { "blend": "alpha", "backfaces": true, "colorwrite": true, "ztest": false, "zwrite": false },
+                "parameters": 
+                {
+                    "lipsliner_abcd":     { "type": "vec4", "value": [1.3, 0, 1.2, 0] },
+                    "lipsliner_krp":      { "type": "vec4", "value": [0.5, 2, -1, 0] },
+                    "lipsliner_rgb_maxa": { "type": "vec4", "value": [0.3, 0.09, 0.12, 1] }
+                },
+                "defines": ["BNB_MAKEUP_LIPSLINER"]
+            }
+        }
+    },
+    "entities": {
+        "lipsliner_ent": { 
+            "components": { "mesh_instance" : {
+                "materials":[
+                    "shaders/lipsliner/blur_hsv",
+                    "shaders/mean",
+                    "shaders/stddev",
+                    "shaders/lipsliner/tone"
+                ],
+                "mesh": "/bnb_prefabs/makeup_lipsliner/meshes/lipsliner.bsm2"} }, 
+            "layers": [
+                "lipsliner_blur_hsv_layer",
+                "lipsliner_mean_layer",
+                "lipsliner_stddev_layer",
+                "lipsliner_tone_layer"
+            ]
+        }
+    },
+    "hierarchy": {
+        "root": [
+            "lipsliner_ent"
+        ]
+    },
+    "render_list": {
+        "default": [
+            { "layer": "lipsliner_blur_hsv_layer", "sub_geometries":["lipsliner/blur_hsv"], "render_target": "blur_hsv_rt" },
+            { "layer": "lipsliner_mean_layer",     "sub_geometries":["mean"], "render_target": "mean_rt" },
+            { "layer": "lipsliner_stddev_layer",   "sub_geometries":["stddev"], "render_target": "stddev_rt" },
+            { "layer": "lipsliner_tone_layer",     "sub_geometries":["lipsliner/tone"], "render_target": "base_rt" }
+        ]
+    },
+    "script": "/bnb_prefabs/makeup_lipsliner/scripts/index.js"
+}

@@ -1,0 +1,211 @@
+{
+    "type": "object",
+    "description": "Morph (i.e. deform) certain parts of the face.",
+    "properties": {
+        "nose": {
+            "type": "object",
+            "properties": {
+                "width": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": -1
+                },
+                "length": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": -1
+                },
+                "tip_width": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": 0
+                },
+                "down_up": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": 0
+                }, 
+                "sellion": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": 0
+                }   
+            }
+        },
+        "face": {
+            "type": "object",
+            "properties": {
+                "narrowing": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": 0
+                },
+                "v_shape": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": 0
+                },
+                "cheekbones_narrowing": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": -1
+                },
+                "cheeks_narrowing": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": 0
+                },
+                "chin_shortening": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": 0
+                },
+                "chin_narrowing": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": 0
+                },
+                "sunken_cheeks": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": 0
+                },
+                "cheeks_jaw_narrowing": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": 0
+                },
+                "jaw_wide_thin": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": 0
+                },      
+                "chin": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": 0
+                },                 
+                "forehead": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": 0
+                }           
+            }
+        },
+        "eyes": {
+            "type": "object",
+            "properties": {
+                "rounding": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": 0
+                },
+                "enlargement": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": 0
+                },
+                "height": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": -1
+                },
+                "spacing": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": -1
+                },
+                "squint": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": -1
+                },
+                "lower_eyelid_pos": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": -1
+                },
+                "lower_eyelid_size": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": -1
+                },
+                "down": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": 0
+                },
+                "eyelid_upper": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": 0
+                }, 
+                "eyelid_lower": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": 0 
+                }     
+            }
+        },
+        "eyebrows": {
+            "type": "object",
+            "properties": {
+                "spacing": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": -1
+                },
+                "height": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": -1
+                },
+                "bend": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": -1
+                }
+            }
+        },
+        "lips": {
+            "type": "object",
+            "properties": {
+                "size": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": -1
+                },
+                "height": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": -1
+                },
+                "thickness": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": -1
+                },
+                "mouth_size": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": -1
+                },
+                "smile": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": 0
+                },
+                "shape": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": -1
+                },
+                "sharp": {
+                    "type": "number",
+                    "maximum": 1,
+                    "minimum": 0
+                }    
+            }
+        }
+    }
+}
